@@ -1,0 +1,4477 @@
+{
+    "id": "0001",
+    "desc": "瑞芳物流中心",
+    "AEX": {
+        "shuttle": {
+            "driver": "iamech_shuttle",
+            "version": "1.0.0.1",
+            "desc": "漢來科技",
+            "iis_url": "http://10.248.82.110:8090/DepotWeb.asmx",
+            "location": [{
+					"id": "1",
+					"storage_num": "CAP101",
+					"shelf_num": "000000",
+					"shelf_location": "CAP101",
+					"hardAddress": "CAP101",
+					"desc": "出貨站",
+					"type": "out"
+				},{
+					"id": "2",
+					"storage_num": "V01-01-01-01",
+					"shelf_num": "000001",
+					"shelf_location": "010170",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "3",
+					"storage_num": "V01-01-01-02",
+					"shelf_num": "000001",
+					"shelf_location": "010170",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "4",
+					"storage_num": "V01-01-01-03",
+					"shelf_num": "000001",
+					"shelf_location": "010170",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "5",
+					"storage_num": "V01-01-01-04",
+					"shelf_num": "000001",
+					"shelf_location": "010170",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "6",
+					"storage_num": "V01-02-01-01",
+					"shelf_num": "000001",
+					"shelf_location": "010170",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "7",
+					"storage_num": "V01-02-01-02",
+					"shelf_num": "000001",
+					"shelf_location": "010170",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "8",
+					"storage_num": "V01-02-01-03",
+					"shelf_num": "000001",
+					"shelf_location": "010170",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "9",
+					"storage_num": "V01-02-01-04",
+					"shelf_num": "000001",
+					"shelf_location": "010170",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "10",
+					"storage_num": "V02-01-01-01",
+					"shelf_num": "000002",
+					"shelf_location": "020170",
+					"hardAddress": "110102110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "11",
+					"storage_num": "V02-01-01-02",
+					"shelf_num": "000002",
+					"shelf_location": "020170",
+					"hardAddress": "110102110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "12",
+					"storage_num": "V02-01-01-03",
+					"shelf_num": "000002",
+					"shelf_location": "020170",
+					"hardAddress": "110102110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "13",
+					"storage_num": "V02-01-01-04",
+					"shelf_num": "000002",
+					"shelf_location": "020170",
+					"hardAddress": "110102110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "14",
+					"storage_num": "V02-02-01-01",
+					"shelf_num": "000002",
+					"shelf_location": "020170",
+					"hardAddress": "110102110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "15",
+					"storage_num": "V02-02-01-02",
+					"shelf_num": "000002",
+					"shelf_location": "020170",
+					"hardAddress": "110102110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "16",
+					"storage_num": "V02-02-01-03",
+					"shelf_num": "000002",
+					"shelf_location": "020170",
+					"hardAddress": "110102110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "17",
+					"storage_num": "V02-02-01-04",
+					"shelf_num": "000002",
+					"shelf_location": "020170",
+					"hardAddress": "110102110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "18",
+					"storage_num": "V03-01-01-01",
+					"shelf_num": "000003",
+					"shelf_location": "030170",
+					"hardAddress": "110103110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "19",
+					"storage_num": "V03-01-01-02",
+					"shelf_num": "000003",
+					"shelf_location": "030170",
+					"hardAddress": "110103110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "20",
+					"storage_num": "V03-01-01-03",
+					"shelf_num": "000003",
+					"shelf_location": "030170",
+					"hardAddress": "110103110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "21",
+					"storage_num": "V03-01-01-04",
+					"shelf_num": "000003",
+					"shelf_location": "030170",
+					"hardAddress": "110103110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "22",
+					"storage_num": "V03-02-01-01",
+					"shelf_num": "000003",
+					"shelf_location": "030170",
+					"hardAddress": "110103110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "23",
+					"storage_num": "V03-02-01-02",
+					"shelf_num": "000003",
+					"shelf_location": "030170",
+					"hardAddress": "110103110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "24",
+					"storage_num": "V03-02-01-03",
+					"shelf_num": "000003",
+					"shelf_location": "030170",
+					"hardAddress": "110103110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "25",
+					"storage_num": "V03-02-01-04",
+					"shelf_num": "000003",
+					"shelf_location": "030170",
+					"hardAddress": "110103110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "26",
+					"storage_num": "V04-01-01-01",
+					"shelf_num": "000004",
+					"shelf_location": "050170",
+					"hardAddress": "110104110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "27",
+					"storage_num": "V04-01-01-02",
+					"shelf_num": "000004",
+					"shelf_location": "050170",
+					"hardAddress": "110104110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "28",
+					"storage_num": "V04-01-01-03",
+					"shelf_num": "000004",
+					"shelf_location": "050170",
+					"hardAddress": "110104110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "29",
+					"storage_num": "V04-01-01-04",
+					"shelf_num": "000004",
+					"shelf_location": "050170",
+					"hardAddress": "110104110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "30",
+					"storage_num": "V04-02-01-01",
+					"shelf_num": "000004",
+					"shelf_location": "050170",
+					"hardAddress": "110104110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "31",
+					"storage_num": "V04-02-01-02",
+					"shelf_num": "000004",
+					"shelf_location": "050170",
+					"hardAddress": "110104110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "32",
+					"storage_num": "V04-02-01-03",
+					"shelf_num": "000004",
+					"shelf_location": "050170",
+					"hardAddress": "110104110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "33",
+					"storage_num": "V04-02-01-04",
+					"shelf_num": "000004",
+					"shelf_location": "050170",
+					"hardAddress": "110104110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "34",
+					"storage_num": "V05-01-01-01",
+					"shelf_num": "000005",
+					"shelf_location": "060170",
+					"hardAddress": "110105110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "35",
+					"storage_num": "V05-01-01-02",
+					"shelf_num": "000005",
+					"shelf_location": "060170",
+					"hardAddress": "110105110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "36",
+					"storage_num": "V05-01-01-03",
+					"shelf_num": "000005",
+					"shelf_location": "060170",
+					"hardAddress": "110105110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "37",
+					"storage_num": "V05-01-01-04",
+					"shelf_num": "000005",
+					"shelf_location": "060170",
+					"hardAddress": "110105110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "38",
+					"storage_num": "V05-02-01-01",
+					"shelf_num": "000005",
+					"shelf_location": "060170",
+					"hardAddress": "110105110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "39",
+					"storage_num": "V05-02-01-02",
+					"shelf_num": "000005",
+					"shelf_location": "060170",
+					"hardAddress": "110105110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "40",
+					"storage_num": "V05-02-01-03",
+					"shelf_num": "000005",
+					"shelf_location": "060170",
+					"hardAddress": "110105110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "41",
+					"storage_num": "V05-02-01-04",
+					"shelf_num": "000005",
+					"shelf_location": "060170",
+					"hardAddress": "110105110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "42",
+					"storage_num": "V06-01-01-01",
+					"shelf_num": "000006",
+					"shelf_location": "070170",
+					"hardAddress": "110106110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "43",
+					"storage_num": "V06-01-01-02",
+					"shelf_num": "000006",
+					"shelf_location": "070170",
+					"hardAddress": "110106110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "44",
+					"storage_num": "V06-01-01-03",
+					"shelf_num": "000006",
+					"shelf_location": "070170",
+					"hardAddress": "110106110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "45",
+					"storage_num": "V06-01-01-04",
+					"shelf_num": "000006",
+					"shelf_location": "070170",
+					"hardAddress": "110106110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "46",
+					"storage_num": "V06-02-01-01",
+					"shelf_num": "000006",
+					"shelf_location": "070170",
+					"hardAddress": "110106110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "47",
+					"storage_num": "V06-02-01-02",
+					"shelf_num": "000006",
+					"shelf_location": "070170",
+					"hardAddress": "110106110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "48",
+					"storage_num": "V06-02-01-03",
+					"shelf_num": "000006",
+					"shelf_location": "070170",
+					"hardAddress": "110106110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "49",
+					"storage_num": "V06-02-01-04",
+					"shelf_num": "000006",
+					"shelf_location": "070170",
+					"hardAddress": "110106110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "50",
+					"storage_num": "V07-01-01-01",
+					"shelf_num": "000007",
+					"shelf_location": "080170",
+					"hardAddress": "110107110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "51",
+					"storage_num": "V07-01-01-02",
+					"shelf_num": "000007",
+					"shelf_location": "080170",
+					"hardAddress": "110107110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "52",
+					"storage_num": "V07-01-01-03",
+					"shelf_num": "000007",
+					"shelf_location": "080170",
+					"hardAddress": "110107110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "53",
+					"storage_num": "V07-01-01-04",
+					"shelf_num": "000007",
+					"shelf_location": "080170",
+					"hardAddress": "110107110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "54",
+					"storage_num": "V07-02-01-01",
+					"shelf_num": "000007",
+					"shelf_location": "080170",
+					"hardAddress": "110107110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "55",
+					"storage_num": "V07-02-01-02",
+					"shelf_num": "000007",
+					"shelf_location": "080170",
+					"hardAddress": "110107110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "56",
+					"storage_num": "V07-02-01-03",
+					"shelf_num": "000007",
+					"shelf_location": "080170",
+					"hardAddress": "110107110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "57",
+					"storage_num": "V07-02-01-04",
+					"shelf_num": "000007",
+					"shelf_location": "080170",
+					"hardAddress": "110107110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "58",
+					"storage_num": "V08-01-01-01",
+					"shelf_num": "000008",
+					"shelf_location": "090170",
+					"hardAddress": "110101210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "59",
+					"storage_num": "V08-01-01-02",
+					"shelf_num": "000008",
+					"shelf_location": "090170",
+					"hardAddress": "110101210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "60",
+					"storage_num": "V08-01-01-03",
+					"shelf_num": "000008",
+					"shelf_location": "090170",
+					"hardAddress": "110101210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "61",
+					"storage_num": "V08-01-01-04",
+					"shelf_num": "000008",
+					"shelf_location": "090170",
+					"hardAddress": "110101210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "62",
+					"storage_num": "V08-02-01-01",
+					"shelf_num": "000008",
+					"shelf_location": "090170",
+					"hardAddress": "110101210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "63",
+					"storage_num": "V08-02-01-02",
+					"shelf_num": "000008",
+					"shelf_location": "090170",
+					"hardAddress": "110101210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "64",
+					"storage_num": "V08-02-01-03",
+					"shelf_num": "000008",
+					"shelf_location": "090170",
+					"hardAddress": "110101210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "65",
+					"storage_num": "V08-02-01-04",
+					"shelf_num": "000008",
+					"shelf_location": "090170",
+					"hardAddress": "110101210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "66",
+					"storage_num": "V09-01-01-01",
+					"shelf_num": "000009",
+					"shelf_location": "100170",
+					"hardAddress": "110102210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "67",
+					"storage_num": "V09-01-01-02",
+					"shelf_num": "000009",
+					"shelf_location": "100170",
+					"hardAddress": "110102210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "68",
+					"storage_num": "V09-01-01-03",
+					"shelf_num": "000009",
+					"shelf_location": "100170",
+					"hardAddress": "110102210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "69",
+					"storage_num": "V09-01-01-04",
+					"shelf_num": "000009",
+					"shelf_location": "100170",
+					"hardAddress": "110102210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "70",
+					"storage_num": "V09-02-01-01",
+					"shelf_num": "000009",
+					"shelf_location": "100170",
+					"hardAddress": "110102210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "71",
+					"storage_num": "V09-02-01-02",
+					"shelf_num": "000009",
+					"shelf_location": "100170",
+					"hardAddress": "110102210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "72",
+					"storage_num": "V09-02-01-03",
+					"shelf_num": "000009",
+					"shelf_location": "100170",
+					"hardAddress": "110102210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "73",
+					"storage_num": "V09-02-01-04",
+					"shelf_num": "000009",
+					"shelf_location": "100170",
+					"hardAddress": "110102210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "74",
+					"storage_num": "V10-01-01-01",
+					"shelf_num": "000010",
+					"shelf_location": "120170",
+					"hardAddress": "110103210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "75",
+					"storage_num": "V10-01-01-02",
+					"shelf_num": "000010",
+					"shelf_location": "120170",
+					"hardAddress": "110103210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "76",
+					"storage_num": "V10-01-01-03",
+					"shelf_num": "000010",
+					"shelf_location": "120170",
+					"hardAddress": "110103210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "77",
+					"storage_num": "V10-01-01-04",
+					"shelf_num": "000010",
+					"shelf_location": "120170",
+					"hardAddress": "110103210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "78",
+					"storage_num": "V10-02-01-01",
+					"shelf_num": "000010",
+					"shelf_location": "120170",
+					"hardAddress": "110103210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "79",
+					"storage_num": "V10-02-01-02",
+					"shelf_num": "000010",
+					"shelf_location": "120170",
+					"hardAddress": "110103210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "80",
+					"storage_num": "V10-02-01-03",
+					"shelf_num": "000010",
+					"shelf_location": "120170",
+					"hardAddress": "110103210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "81",
+					"storage_num": "V10-02-01-04",
+					"shelf_num": "000010",
+					"shelf_location": "120170",
+					"hardAddress": "110103210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "82",
+					"storage_num": "V11-01-01-01",
+					"shelf_num": "000011",
+					"shelf_location": "130170",
+					"hardAddress": "110104210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "83",
+					"storage_num": "V11-01-01-02",
+					"shelf_num": "000011",
+					"shelf_location": "130170",
+					"hardAddress": "110104210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "84",
+					"storage_num": "V11-01-01-03",
+					"shelf_num": "000011",
+					"shelf_location": "130170",
+					"hardAddress": "110104210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "85",
+					"storage_num": "V11-01-01-04",
+					"shelf_num": "000011",
+					"shelf_location": "130170",
+					"hardAddress": "110104210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "86",
+					"storage_num": "V11-02-01-01",
+					"shelf_num": "000011",
+					"shelf_location": "130170",
+					"hardAddress": "110104210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "87",
+					"storage_num": "V11-02-01-02",
+					"shelf_num": "000011",
+					"shelf_location": "130170",
+					"hardAddress": "110104210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "88",
+					"storage_num": "V11-02-01-03",
+					"shelf_num": "000011",
+					"shelf_location": "130170",
+					"hardAddress": "110104210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "89",
+					"storage_num": "V11-02-01-04",
+					"shelf_num": "000011",
+					"shelf_location": "130170",
+					"hardAddress": "110104210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "90",
+					"storage_num": "V12-01-01-01",
+					"shelf_num": "000012",
+					"shelf_location": "140170",
+					"hardAddress": "110105210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "91",
+					"storage_num": "V12-01-01-02",
+					"shelf_num": "000012",
+					"shelf_location": "140170",
+					"hardAddress": "110105210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "92",
+					"storage_num": "V12-01-01-03",
+					"shelf_num": "000012",
+					"shelf_location": "140170",
+					"hardAddress": "110105210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "93",
+					"storage_num": "V12-01-01-04",
+					"shelf_num": "000012",
+					"shelf_location": "140170",
+					"hardAddress": "110105210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "94",
+					"storage_num": "V12-02-01-01",
+					"shelf_num": "000012",
+					"shelf_location": "140170",
+					"hardAddress": "110105210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "95",
+					"storage_num": "V12-02-01-02",
+					"shelf_num": "000012",
+					"shelf_location": "140170",
+					"hardAddress": "110105210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "96",
+					"storage_num": "V12-02-01-03",
+					"shelf_num": "000012",
+					"shelf_location": "140170",
+					"hardAddress": "110105210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "97",
+					"storage_num": "V12-02-01-04",
+					"shelf_num": "000012",
+					"shelf_location": "140170",
+					"hardAddress": "110105210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "98",
+					"storage_num": "V13-01-01-01",
+					"shelf_num": "000013",
+					"shelf_location": "150170",
+					"hardAddress": "110106210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "99",
+					"storage_num": "V13-01-01-02",
+					"shelf_num": "000013",
+					"shelf_location": "150170",
+					"hardAddress": "110106210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "100",
+					"storage_num": "V13-01-01-03",
+					"shelf_num": "000013",
+					"shelf_location": "150170",
+					"hardAddress": "110106210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "101",
+					"storage_num": "V13-01-01-04",
+					"shelf_num": "000013",
+					"shelf_location": "150170",
+					"hardAddress": "110106210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "102",
+					"storage_num": "V13-02-01-01",
+					"shelf_num": "000013",
+					"shelf_location": "150170",
+					"hardAddress": "110106210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "103",
+					"storage_num": "V13-02-01-02",
+					"shelf_num": "000013",
+					"shelf_location": "150170",
+					"hardAddress": "110106210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "104",
+					"storage_num": "V13-02-01-03",
+					"shelf_num": "000013",
+					"shelf_location": "150170",
+					"hardAddress": "110106210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "105",
+					"storage_num": "V13-02-01-04",
+					"shelf_num": "000013",
+					"shelf_location": "150170",
+					"hardAddress": "110106210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "106",
+					"storage_num": "V14-01-01-01",
+					"shelf_num": "000014",
+					"shelf_location": "010150",
+					"hardAddress": "110107210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "107",
+					"storage_num": "V14-01-01-02",
+					"shelf_num": "000014",
+					"shelf_location": "010150",
+					"hardAddress": "110107210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "108",
+					"storage_num": "V14-01-01-03",
+					"shelf_num": "000014",
+					"shelf_location": "010150",
+					"hardAddress": "110107210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "109",
+					"storage_num": "V14-01-01-04",
+					"shelf_num": "000014",
+					"shelf_location": "010150",
+					"hardAddress": "110107210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "110",
+					"storage_num": "V14-02-01-01",
+					"shelf_num": "000014",
+					"shelf_location": "010150",
+					"hardAddress": "110107210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "111",
+					"storage_num": "V14-02-01-02",
+					"shelf_num": "000014",
+					"shelf_location": "010150",
+					"hardAddress": "110107210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "112",
+					"storage_num": "V14-02-01-03",
+					"shelf_num": "000014",
+					"shelf_location": "010150",
+					"hardAddress": "110107210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "113",
+					"storage_num": "V14-02-01-04",
+					"shelf_num": "000014",
+					"shelf_location": "010150",
+					"hardAddress": "110107210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "114",
+					"storage_num": "V15-01-01-01",
+					"shelf_num": "000015",
+					"shelf_location": "020150",
+					"hardAddress": "110101310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "115",
+					"storage_num": "V15-01-01-02",
+					"shelf_num": "000015",
+					"shelf_location": "020150",
+					"hardAddress": "110101310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "116",
+					"storage_num": "V15-01-01-03",
+					"shelf_num": "000015",
+					"shelf_location": "020150",
+					"hardAddress": "110101310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "117",
+					"storage_num": "V15-01-01-04",
+					"shelf_num": "000015",
+					"shelf_location": "020150",
+					"hardAddress": "110101310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "118",
+					"storage_num": "V15-02-01-01",
+					"shelf_num": "000015",
+					"shelf_location": "020150",
+					"hardAddress": "110101310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "119",
+					"storage_num": "V15-02-01-02",
+					"shelf_num": "000015",
+					"shelf_location": "020150",
+					"hardAddress": "110101310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "120",
+					"storage_num": "V15-02-01-03",
+					"shelf_num": "000015",
+					"shelf_location": "020150",
+					"hardAddress": "110101310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "121",
+					"storage_num": "V15-02-01-04",
+					"shelf_num": "000015",
+					"shelf_location": "020150",
+					"hardAddress": "110101310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "122",
+					"storage_num": "V16-01-01-01",
+					"shelf_num": "000016",
+					"shelf_location": "030150",
+					"hardAddress": "110102310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "123",
+					"storage_num": "V16-01-01-02",
+					"shelf_num": "000016",
+					"shelf_location": "030150",
+					"hardAddress": "110102310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "124",
+					"storage_num": "V16-01-01-03",
+					"shelf_num": "000016",
+					"shelf_location": "030150",
+					"hardAddress": "110102310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "125",
+					"storage_num": "V16-01-01-04",
+					"shelf_num": "000016",
+					"shelf_location": "030150",
+					"hardAddress": "110102310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "126",
+					"storage_num": "V16-02-01-01",
+					"shelf_num": "000016",
+					"shelf_location": "030150",
+					"hardAddress": "110102310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "127",
+					"storage_num": "V16-02-01-02",
+					"shelf_num": "000016",
+					"shelf_location": "030150",
+					"hardAddress": "110102310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "128",
+					"storage_num": "V16-02-01-03",
+					"shelf_num": "000016",
+					"shelf_location": "030150",
+					"hardAddress": "110102310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "129",
+					"storage_num": "V16-02-01-04",
+					"shelf_num": "000016",
+					"shelf_location": "030150",
+					"hardAddress": "110102310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "130",
+					"storage_num": "V17-01-01-01",
+					"shelf_num": "000017",
+					"shelf_location": "050150",
+					"hardAddress": "110103310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "131",
+					"storage_num": "V17-01-01-02",
+					"shelf_num": "000017",
+					"shelf_location": "050150",
+					"hardAddress": "110103310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "132",
+					"storage_num": "V17-01-01-03",
+					"shelf_num": "000017",
+					"shelf_location": "050150",
+					"hardAddress": "110103310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "133",
+					"storage_num": "V17-01-01-04",
+					"shelf_num": "000017",
+					"shelf_location": "050150",
+					"hardAddress": "110103310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "134",
+					"storage_num": "V17-02-01-01",
+					"shelf_num": "000017",
+					"shelf_location": "050150",
+					"hardAddress": "110103310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "135",
+					"storage_num": "V17-02-01-02",
+					"shelf_num": "000017",
+					"shelf_location": "050150",
+					"hardAddress": "110103310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "136",
+					"storage_num": "V17-02-01-03",
+					"shelf_num": "000017",
+					"shelf_location": "050150",
+					"hardAddress": "110103310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "137",
+					"storage_num": "V17-02-01-04",
+					"shelf_num": "000017",
+					"shelf_location": "050150",
+					"hardAddress": "110103310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "138",
+					"storage_num": "V18-01-01-01",
+					"shelf_num": "000018",
+					"shelf_location": "060150",
+					"hardAddress": "110104310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "139",
+					"storage_num": "V18-01-01-02",
+					"shelf_num": "000018",
+					"shelf_location": "060150",
+					"hardAddress": "110104310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "140",
+					"storage_num": "V18-01-01-03",
+					"shelf_num": "000018",
+					"shelf_location": "060150",
+					"hardAddress": "110104310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "141",
+					"storage_num": "V18-01-01-04",
+					"shelf_num": "000018",
+					"shelf_location": "060150",
+					"hardAddress": "110104310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "142",
+					"storage_num": "V18-02-01-01",
+					"shelf_num": "000018",
+					"shelf_location": "060150",
+					"hardAddress": "110104310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "143",
+					"storage_num": "V18-02-01-02",
+					"shelf_num": "000018",
+					"shelf_location": "060150",
+					"hardAddress": "110104310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "144",
+					"storage_num": "V18-02-01-03",
+					"shelf_num": "000018",
+					"shelf_location": "060150",
+					"hardAddress": "110104310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "145",
+					"storage_num": "V18-02-01-04",
+					"shelf_num": "000018",
+					"shelf_location": "060150",
+					"hardAddress": "110104310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "146",
+					"storage_num": "V19-01-01-01",
+					"shelf_num": "000019",
+					"shelf_location": "070150",
+					"hardAddress": "110105310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "147",
+					"storage_num": "V19-01-01-02",
+					"shelf_num": "000019",
+					"shelf_location": "070150",
+					"hardAddress": "110105310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "148",
+					"storage_num": "V19-01-01-03",
+					"shelf_num": "000019",
+					"shelf_location": "070150",
+					"hardAddress": "110105310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "149",
+					"storage_num": "V19-01-01-04",
+					"shelf_num": "000019",
+					"shelf_location": "070150",
+					"hardAddress": "110105310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "150",
+					"storage_num": "V19-02-01-01",
+					"shelf_num": "000019",
+					"shelf_location": "070150",
+					"hardAddress": "110105310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "151",
+					"storage_num": "V19-02-01-02",
+					"shelf_num": "000019",
+					"shelf_location": "070150",
+					"hardAddress": "110105310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "152",
+					"storage_num": "V19-02-01-03",
+					"shelf_num": "000019",
+					"shelf_location": "070150",
+					"hardAddress": "110105310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "153",
+					"storage_num": "V19-02-01-04",
+					"shelf_num": "000019",
+					"shelf_location": "070150",
+					"hardAddress": "110105310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "154",
+					"storage_num": "V20-01-01-01",
+					"shelf_num": "000020",
+					"shelf_location": "080150",
+					"hardAddress": "110106310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "155",
+					"storage_num": "V20-01-01-02",
+					"shelf_num": "000020",
+					"shelf_location": "080150",
+					"hardAddress": "110106310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "156",
+					"storage_num": "V20-01-01-03",
+					"shelf_num": "000020",
+					"shelf_location": "080150",
+					"hardAddress": "110106310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "157",
+					"storage_num": "V20-01-01-04",
+					"shelf_num": "000020",
+					"shelf_location": "080150",
+					"hardAddress": "110106310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "158",
+					"storage_num": "V20-02-01-01",
+					"shelf_num": "000020",
+					"shelf_location": "080150",
+					"hardAddress": "110106310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "159",
+					"storage_num": "V20-02-01-02",
+					"shelf_num": "000020",
+					"shelf_location": "080150",
+					"hardAddress": "110106310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "160",
+					"storage_num": "V20-02-01-03",
+					"shelf_num": "000020",
+					"shelf_location": "080150",
+					"hardAddress": "110106310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "161",
+					"storage_num": "V20-02-01-04",
+					"shelf_num": "000020",
+					"shelf_location": "080150",
+					"hardAddress": "110106310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "162",
+					"storage_num": "V21-01-01-01",
+					"shelf_num": "000021",
+					"shelf_location": "090150",
+					"hardAddress": "110107310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "163",
+					"storage_num": "V21-01-01-02",
+					"shelf_num": "000021",
+					"shelf_location": "090150",
+					"hardAddress": "110107310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "164",
+					"storage_num": "V21-01-01-03",
+					"shelf_num": "000021",
+					"shelf_location": "090150",
+					"hardAddress": "110107310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "165",
+					"storage_num": "V21-01-01-04",
+					"shelf_num": "000021",
+					"shelf_location": "090150",
+					"hardAddress": "110107310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "166",
+					"storage_num": "V21-02-01-01",
+					"shelf_num": "000021",
+					"shelf_location": "090150",
+					"hardAddress": "110107310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "167",
+					"storage_num": "V21-02-01-02",
+					"shelf_num": "000021",
+					"shelf_location": "090150",
+					"hardAddress": "110107310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "168",
+					"storage_num": "V21-02-01-03",
+					"shelf_num": "000021",
+					"shelf_location": "090150",
+					"hardAddress": "110107310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "169",
+					"storage_num": "V21-02-01-04",
+					"shelf_num": "000021",
+					"shelf_location": "090150",
+					"hardAddress": "110107310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "170",
+					"storage_num": "V22-01-01-01",
+					"shelf_num": "000022",
+					"shelf_location": "100150",
+					"hardAddress": "110101410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "171",
+					"storage_num": "V22-01-01-02",
+					"shelf_num": "000022",
+					"shelf_location": "100150",
+					"hardAddress": "110101410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "172",
+					"storage_num": "V22-01-01-03",
+					"shelf_num": "000022",
+					"shelf_location": "100150",
+					"hardAddress": "110101410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "173",
+					"storage_num": "V22-01-01-04",
+					"shelf_num": "000022",
+					"shelf_location": "100150",
+					"hardAddress": "110101410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "174",
+					"storage_num": "V22-02-01-01",
+					"shelf_num": "000022",
+					"shelf_location": "100150",
+					"hardAddress": "110101410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "175",
+					"storage_num": "V22-02-01-02",
+					"shelf_num": "000022",
+					"shelf_location": "100150",
+					"hardAddress": "110101410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "176",
+					"storage_num": "V22-02-01-03",
+					"shelf_num": "000022",
+					"shelf_location": "100150",
+					"hardAddress": "110101410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "177",
+					"storage_num": "V22-02-01-04",
+					"shelf_num": "000022",
+					"shelf_location": "100150",
+					"hardAddress": "110101410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "178",
+					"storage_num": "V23-01-01-01",
+					"shelf_num": "000023",
+					"shelf_location": "120150",
+					"hardAddress": "110102410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "179",
+					"storage_num": "V23-01-01-02",
+					"shelf_num": "000023",
+					"shelf_location": "120150",
+					"hardAddress": "110102410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "180",
+					"storage_num": "V23-01-01-03",
+					"shelf_num": "000023",
+					"shelf_location": "120150",
+					"hardAddress": "110102410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "181",
+					"storage_num": "V23-01-01-04",
+					"shelf_num": "000023",
+					"shelf_location": "120150",
+					"hardAddress": "110102410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "182",
+					"storage_num": "V23-02-01-01",
+					"shelf_num": "000023",
+					"shelf_location": "120150",
+					"hardAddress": "110102410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "183",
+					"storage_num": "V23-02-01-02",
+					"shelf_num": "000023",
+					"shelf_location": "120150",
+					"hardAddress": "110102410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "184",
+					"storage_num": "V23-02-01-03",
+					"shelf_num": "000023",
+					"shelf_location": "120150",
+					"hardAddress": "110102410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "185",
+					"storage_num": "V23-02-01-04",
+					"shelf_num": "000023",
+					"shelf_location": "120150",
+					"hardAddress": "110102410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "186",
+					"storage_num": "V24-01-01-01",
+					"shelf_num": "000024",
+					"shelf_location": "130150",
+					"hardAddress": "110103410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "187",
+					"storage_num": "V24-01-01-02",
+					"shelf_num": "000024",
+					"shelf_location": "130150",
+					"hardAddress": "110103410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "188",
+					"storage_num": "V24-01-01-03",
+					"shelf_num": "000024",
+					"shelf_location": "130150",
+					"hardAddress": "110103410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "189",
+					"storage_num": "V24-01-01-04",
+					"shelf_num": "000024",
+					"shelf_location": "130150",
+					"hardAddress": "110103410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "190",
+					"storage_num": "V24-02-01-01",
+					"shelf_num": "000024",
+					"shelf_location": "130150",
+					"hardAddress": "110103410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "191",
+					"storage_num": "V24-02-01-02",
+					"shelf_num": "000024",
+					"shelf_location": "130150",
+					"hardAddress": "110103410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "192",
+					"storage_num": "V24-02-01-03",
+					"shelf_num": "000024",
+					"shelf_location": "130150",
+					"hardAddress": "110103410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "193",
+					"storage_num": "V24-02-01-04",
+					"shelf_num": "000024",
+					"shelf_location": "130150",
+					"hardAddress": "110103410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "194",
+					"storage_num": "V25-01-01-01",
+					"shelf_num": "000025",
+					"shelf_location": "140150",
+					"hardAddress": "110104410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "195",
+					"storage_num": "V25-01-01-02",
+					"shelf_num": "000025",
+					"shelf_location": "140150",
+					"hardAddress": "110104410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "196",
+					"storage_num": "V25-01-01-03",
+					"shelf_num": "000025",
+					"shelf_location": "140150",
+					"hardAddress": "110104410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "197",
+					"storage_num": "V25-01-01-04",
+					"shelf_num": "000025",
+					"shelf_location": "140150",
+					"hardAddress": "110104410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "198",
+					"storage_num": "V25-02-01-01",
+					"shelf_num": "000025",
+					"shelf_location": "140150",
+					"hardAddress": "110104410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "199",
+					"storage_num": "V25-02-01-02",
+					"shelf_num": "000025",
+					"shelf_location": "140150",
+					"hardAddress": "110104410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "200",
+					"storage_num": "V25-02-01-03",
+					"shelf_num": "000025",
+					"shelf_location": "140150",
+					"hardAddress": "110104410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "201",
+					"storage_num": "V25-02-01-04",
+					"shelf_num": "000025",
+					"shelf_location": "140150",
+					"hardAddress": "110104410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "202",
+					"storage_num": "V26-01-01-01",
+					"shelf_num": "000026",
+					"shelf_location": "150150",
+					"hardAddress": "110105410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "203",
+					"storage_num": "V26-01-01-02",
+					"shelf_num": "000026",
+					"shelf_location": "150150",
+					"hardAddress": "110105410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "204",
+					"storage_num": "V26-01-01-03",
+					"shelf_num": "000026",
+					"shelf_location": "150150",
+					"hardAddress": "110105410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "205",
+					"storage_num": "V26-01-01-04",
+					"shelf_num": "000026",
+					"shelf_location": "150150",
+					"hardAddress": "110105410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "206",
+					"storage_num": "V26-02-01-01",
+					"shelf_num": "000026",
+					"shelf_location": "150150",
+					"hardAddress": "110105410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "207",
+					"storage_num": "V26-02-01-02",
+					"shelf_num": "000026",
+					"shelf_location": "150150",
+					"hardAddress": "110105410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "208",
+					"storage_num": "V26-02-01-03",
+					"shelf_num": "000026",
+					"shelf_location": "150150",
+					"hardAddress": "110105410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "209",
+					"storage_num": "V26-02-01-04",
+					"shelf_num": "000026",
+					"shelf_location": "150150",
+					"hardAddress": "110105410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "210",
+					"storage_num": "V27-01-01-01",
+					"shelf_num": "000027",
+					"shelf_location": "010140",
+					"hardAddress": "110106410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "211",
+					"storage_num": "V27-01-01-02",
+					"shelf_num": "000027",
+					"shelf_location": "010140",
+					"hardAddress": "110106410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "212",
+					"storage_num": "V27-01-01-03",
+					"shelf_num": "000027",
+					"shelf_location": "010140",
+					"hardAddress": "110106410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "213",
+					"storage_num": "V27-01-01-04",
+					"shelf_num": "000027",
+					"shelf_location": "010140",
+					"hardAddress": "110106410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "214",
+					"storage_num": "V27-02-01-01",
+					"shelf_num": "000027",
+					"shelf_location": "010140",
+					"hardAddress": "110106410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "215",
+					"storage_num": "V27-02-01-02",
+					"shelf_num": "000027",
+					"shelf_location": "010140",
+					"hardAddress": "110106410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "216",
+					"storage_num": "V27-02-01-03",
+					"shelf_num": "000027",
+					"shelf_location": "010140",
+					"hardAddress": "110106410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "217",
+					"storage_num": "V27-02-01-04",
+					"shelf_num": "000027",
+					"shelf_location": "010140",
+					"hardAddress": "110106410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "218",
+					"storage_num": "V28-01-01-01",
+					"shelf_num": "000028",
+					"shelf_location": "020140",
+					"hardAddress": "110107410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "219",
+					"storage_num": "V28-01-01-02",
+					"shelf_num": "000028",
+					"shelf_location": "020140",
+					"hardAddress": "110107410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "220",
+					"storage_num": "V28-01-01-03",
+					"shelf_num": "000028",
+					"shelf_location": "020140",
+					"hardAddress": "110107410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "221",
+					"storage_num": "V28-01-01-04",
+					"shelf_num": "000028",
+					"shelf_location": "020140",
+					"hardAddress": "110107410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "222",
+					"storage_num": "V28-02-01-01",
+					"shelf_num": "000028",
+					"shelf_location": "020140",
+					"hardAddress": "110107410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "223",
+					"storage_num": "V28-02-01-02",
+					"shelf_num": "000028",
+					"shelf_location": "020140",
+					"hardAddress": "110107410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "224",
+					"storage_num": "V28-02-01-03",
+					"shelf_num": "000028",
+					"shelf_location": "020140",
+					"hardAddress": "110107410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "225",
+					"storage_num": "V28-02-01-04",
+					"shelf_num": "000028",
+					"shelf_location": "020140",
+					"hardAddress": "110107410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "226",
+					"storage_num": "V29-01-01-01",
+					"shelf_num": "000029",
+					"shelf_location": "030140",
+					"hardAddress": "110201110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "227",
+					"storage_num": "V29-01-01-02",
+					"shelf_num": "000029",
+					"shelf_location": "030140",
+					"hardAddress": "110201110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "228",
+					"storage_num": "V29-01-01-03",
+					"shelf_num": "000029",
+					"shelf_location": "030140",
+					"hardAddress": "110201110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "229",
+					"storage_num": "V29-01-01-04",
+					"shelf_num": "000029",
+					"shelf_location": "030140",
+					"hardAddress": "110201110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "230",
+					"storage_num": "V29-02-01-01",
+					"shelf_num": "000029",
+					"shelf_location": "030140",
+					"hardAddress": "110201110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "231",
+					"storage_num": "V29-02-01-02",
+					"shelf_num": "000029",
+					"shelf_location": "030140",
+					"hardAddress": "110201110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "232",
+					"storage_num": "V29-02-01-03",
+					"shelf_num": "000029",
+					"shelf_location": "030140",
+					"hardAddress": "110201110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "233",
+					"storage_num": "V29-02-01-04",
+					"shelf_num": "000029",
+					"shelf_location": "030140",
+					"hardAddress": "110201110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "234",
+					"storage_num": "V30-01-01-01",
+					"shelf_num": "000030",
+					"shelf_location": "050140",
+					"hardAddress": "110202110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "235",
+					"storage_num": "V30-01-01-02",
+					"shelf_num": "000030",
+					"shelf_location": "050140",
+					"hardAddress": "110202110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "236",
+					"storage_num": "V30-01-01-03",
+					"shelf_num": "000030",
+					"shelf_location": "050140",
+					"hardAddress": "110202110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "237",
+					"storage_num": "V30-01-01-04",
+					"shelf_num": "000030",
+					"shelf_location": "050140",
+					"hardAddress": "110202110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "238",
+					"storage_num": "V30-02-01-01",
+					"shelf_num": "000030",
+					"shelf_location": "050140",
+					"hardAddress": "110202110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "239",
+					"storage_num": "V30-02-01-02",
+					"shelf_num": "000030",
+					"shelf_location": "050140",
+					"hardAddress": "110202110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "240",
+					"storage_num": "V30-02-01-03",
+					"shelf_num": "000030",
+					"shelf_location": "050140",
+					"hardAddress": "110202110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "241",
+					"storage_num": "V30-02-01-04",
+					"shelf_num": "000030",
+					"shelf_location": "050140",
+					"hardAddress": "110202110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "242",
+					"storage_num": "V31-01-01-01",
+					"shelf_num": "000031",
+					"shelf_location": "060140",
+					"hardAddress": "110203110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "243",
+					"storage_num": "V31-01-01-02",
+					"shelf_num": "000031",
+					"shelf_location": "060140",
+					"hardAddress": "110203110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "244",
+					"storage_num": "V31-01-01-03",
+					"shelf_num": "000031",
+					"shelf_location": "060140",
+					"hardAddress": "110203110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "245",
+					"storage_num": "V31-01-01-04",
+					"shelf_num": "000031",
+					"shelf_location": "060140",
+					"hardAddress": "110203110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "246",
+					"storage_num": "V31-02-01-01",
+					"shelf_num": "000031",
+					"shelf_location": "060140",
+					"hardAddress": "110203110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "247",
+					"storage_num": "V31-02-01-02",
+					"shelf_num": "000031",
+					"shelf_location": "060140",
+					"hardAddress": "110203110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "248",
+					"storage_num": "V31-02-01-03",
+					"shelf_num": "000031",
+					"shelf_location": "060140",
+					"hardAddress": "110203110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "249",
+					"storage_num": "V31-02-01-04",
+					"shelf_num": "000031",
+					"shelf_location": "060140",
+					"hardAddress": "110203110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "250",
+					"storage_num": "V32-01-01-01",
+					"shelf_num": "000032",
+					"shelf_location": "070140",
+					"hardAddress": "110204110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "251",
+					"storage_num": "V32-01-01-02",
+					"shelf_num": "000032",
+					"shelf_location": "070140",
+					"hardAddress": "110204110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "252",
+					"storage_num": "V32-01-01-03",
+					"shelf_num": "000032",
+					"shelf_location": "070140",
+					"hardAddress": "110204110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "253",
+					"storage_num": "V32-01-01-04",
+					"shelf_num": "000032",
+					"shelf_location": "070140",
+					"hardAddress": "110204110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "254",
+					"storage_num": "V32-02-01-01",
+					"shelf_num": "000032",
+					"shelf_location": "070140",
+					"hardAddress": "110204110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "255",
+					"storage_num": "V32-02-01-02",
+					"shelf_num": "000032",
+					"shelf_location": "070140",
+					"hardAddress": "110204110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "256",
+					"storage_num": "V32-02-01-03",
+					"shelf_num": "000032",
+					"shelf_location": "070140",
+					"hardAddress": "110204110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "257",
+					"storage_num": "V32-02-01-04",
+					"shelf_num": "000032",
+					"shelf_location": "070140",
+					"hardAddress": "110204110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "258",
+					"storage_num": "V33-01-01-01",
+					"shelf_num": "000033",
+					"shelf_location": "080140",
+					"hardAddress": "110205110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "259",
+					"storage_num": "V33-01-01-02",
+					"shelf_num": "000033",
+					"shelf_location": "080140",
+					"hardAddress": "110205110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "260",
+					"storage_num": "V33-01-01-03",
+					"shelf_num": "000033",
+					"shelf_location": "080140",
+					"hardAddress": "110205110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "261",
+					"storage_num": "V33-01-01-04",
+					"shelf_num": "000033",
+					"shelf_location": "080140",
+					"hardAddress": "110205110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "262",
+					"storage_num": "V33-02-01-01",
+					"shelf_num": "000033",
+					"shelf_location": "080140",
+					"hardAddress": "110205110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "263",
+					"storage_num": "V33-02-01-02",
+					"shelf_num": "000033",
+					"shelf_location": "080140",
+					"hardAddress": "110205110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "264",
+					"storage_num": "V33-02-01-03",
+					"shelf_num": "000033",
+					"shelf_location": "080140",
+					"hardAddress": "110205110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "265",
+					"storage_num": "V33-02-01-04",
+					"shelf_num": "000033",
+					"shelf_location": "080140",
+					"hardAddress": "110205110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "266",
+					"storage_num": "V34-01-01-01",
+					"shelf_num": "000034",
+					"shelf_location": "090140",
+					"hardAddress": "110206110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "267",
+					"storage_num": "V34-01-01-02",
+					"shelf_num": "000034",
+					"shelf_location": "090140",
+					"hardAddress": "110206110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "268",
+					"storage_num": "V34-01-01-03",
+					"shelf_num": "000034",
+					"shelf_location": "090140",
+					"hardAddress": "110206110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "269",
+					"storage_num": "V34-01-01-04",
+					"shelf_num": "000034",
+					"shelf_location": "090140",
+					"hardAddress": "110206110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "270",
+					"storage_num": "V34-02-01-01",
+					"shelf_num": "000034",
+					"shelf_location": "090140",
+					"hardAddress": "110206110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "271",
+					"storage_num": "V34-02-01-02",
+					"shelf_num": "000034",
+					"shelf_location": "090140",
+					"hardAddress": "110206110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "272",
+					"storage_num": "V34-02-01-03",
+					"shelf_num": "000034",
+					"shelf_location": "090140",
+					"hardAddress": "110206110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "273",
+					"storage_num": "V34-02-01-04",
+					"shelf_num": "000034",
+					"shelf_location": "090140",
+					"hardAddress": "110206110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "274",
+					"storage_num": "V35-01-01-01",
+					"shelf_num": "000035",
+					"shelf_location": "100140",
+					"hardAddress": "110207110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "275",
+					"storage_num": "V35-01-01-02",
+					"shelf_num": "000035",
+					"shelf_location": "100140",
+					"hardAddress": "110207110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "276",
+					"storage_num": "V35-01-01-03",
+					"shelf_num": "000035",
+					"shelf_location": "100140",
+					"hardAddress": "110207110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "277",
+					"storage_num": "V35-01-01-04",
+					"shelf_num": "000035",
+					"shelf_location": "100140",
+					"hardAddress": "110207110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "278",
+					"storage_num": "V35-02-01-01",
+					"shelf_num": "000035",
+					"shelf_location": "100140",
+					"hardAddress": "110207110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "279",
+					"storage_num": "V35-02-01-02",
+					"shelf_num": "000035",
+					"shelf_location": "100140",
+					"hardAddress": "110207110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "280",
+					"storage_num": "V35-02-01-03",
+					"shelf_num": "000035",
+					"shelf_location": "100140",
+					"hardAddress": "110207110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "281",
+					"storage_num": "V35-02-01-04",
+					"shelf_num": "000035",
+					"shelf_location": "100140",
+					"hardAddress": "110207110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "282",
+					"storage_num": "V36-01-01-01",
+					"shelf_num": "000036",
+					"shelf_location": "120140",
+					"hardAddress": "110201210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "283",
+					"storage_num": "V36-01-01-02",
+					"shelf_num": "000036",
+					"shelf_location": "120140",
+					"hardAddress": "110201210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "284",
+					"storage_num": "V36-01-01-03",
+					"shelf_num": "000036",
+					"shelf_location": "120140",
+					"hardAddress": "110201210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "285",
+					"storage_num": "V36-01-01-04",
+					"shelf_num": "000036",
+					"shelf_location": "120140",
+					"hardAddress": "110201210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "286",
+					"storage_num": "V36-02-01-01",
+					"shelf_num": "000036",
+					"shelf_location": "120140",
+					"hardAddress": "110201210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "287",
+					"storage_num": "V36-02-01-02",
+					"shelf_num": "000036",
+					"shelf_location": "120140",
+					"hardAddress": "110201210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "288",
+					"storage_num": "V36-02-01-03",
+					"shelf_num": "000036",
+					"shelf_location": "120140",
+					"hardAddress": "110201210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "289",
+					"storage_num": "V36-02-01-04",
+					"shelf_num": "000036",
+					"shelf_location": "120140",
+					"hardAddress": "110201210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "290",
+					"storage_num": "V37-01-01-01",
+					"shelf_num": "000037",
+					"shelf_location": "130140",
+					"hardAddress": "110202210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "291",
+					"storage_num": "V37-01-01-02",
+					"shelf_num": "000037",
+					"shelf_location": "130140",
+					"hardAddress": "110202210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "292",
+					"storage_num": "V37-01-01-03",
+					"shelf_num": "000037",
+					"shelf_location": "130140",
+					"hardAddress": "110202210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "293",
+					"storage_num": "V37-01-01-04",
+					"shelf_num": "000037",
+					"shelf_location": "130140",
+					"hardAddress": "110202210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "294",
+					"storage_num": "V37-02-01-01",
+					"shelf_num": "000037",
+					"shelf_location": "130140",
+					"hardAddress": "110202210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "295",
+					"storage_num": "V37-02-01-02",
+					"shelf_num": "000037",
+					"shelf_location": "130140",
+					"hardAddress": "110202210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "296",
+					"storage_num": "V37-02-01-03",
+					"shelf_num": "000037",
+					"shelf_location": "130140",
+					"hardAddress": "110202210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "297",
+					"storage_num": "V37-02-01-04",
+					"shelf_num": "000037",
+					"shelf_location": "130140",
+					"hardAddress": "110202210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "298",
+					"storage_num": "V38-01-01-01",
+					"shelf_num": "000038",
+					"shelf_location": "140140",
+					"hardAddress": "110203210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "299",
+					"storage_num": "V38-01-01-02",
+					"shelf_num": "000038",
+					"shelf_location": "140140",
+					"hardAddress": "110203210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "300",
+					"storage_num": "V38-01-01-03",
+					"shelf_num": "000038",
+					"shelf_location": "140140",
+					"hardAddress": "110203210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "301",
+					"storage_num": "V38-01-01-04",
+					"shelf_num": "000038",
+					"shelf_location": "140140",
+					"hardAddress": "110203210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "302",
+					"storage_num": "V38-02-01-01",
+					"shelf_num": "000038",
+					"shelf_location": "140140",
+					"hardAddress": "110203210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "303",
+					"storage_num": "V38-02-01-02",
+					"shelf_num": "000038",
+					"shelf_location": "140140",
+					"hardAddress": "110203210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "304",
+					"storage_num": "V38-02-01-03",
+					"shelf_num": "000038",
+					"shelf_location": "140140",
+					"hardAddress": "110203210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "305",
+					"storage_num": "V38-02-01-04",
+					"shelf_num": "000038",
+					"shelf_location": "140140",
+					"hardAddress": "110203210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "306",
+					"storage_num": "V39-01-01-01",
+					"shelf_num": "000039",
+					"shelf_location": "150140",
+					"hardAddress": "110204210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "307",
+					"storage_num": "V39-01-01-02",
+					"shelf_num": "000039",
+					"shelf_location": "150140",
+					"hardAddress": "110204210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "308",
+					"storage_num": "V39-01-01-03",
+					"shelf_num": "000039",
+					"shelf_location": "150140",
+					"hardAddress": "110204210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "309",
+					"storage_num": "V39-01-01-04",
+					"shelf_num": "000039",
+					"shelf_location": "150140",
+					"hardAddress": "110204210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "310",
+					"storage_num": "V39-02-01-01",
+					"shelf_num": "000039",
+					"shelf_location": "150140",
+					"hardAddress": "110204210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "311",
+					"storage_num": "V39-02-01-02",
+					"shelf_num": "000039",
+					"shelf_location": "150140",
+					"hardAddress": "110204210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "312",
+					"storage_num": "V39-02-01-03",
+					"shelf_num": "000039",
+					"shelf_location": "150140",
+					"hardAddress": "110204210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "313",
+					"storage_num": "V39-02-01-04",
+					"shelf_num": "000039",
+					"shelf_location": "150140",
+					"hardAddress": "110204210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "314",
+					"storage_num": "V40-01-01-01",
+					"shelf_num": "000040",
+					"shelf_location": "010120",
+					"hardAddress": "110205210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "315",
+					"storage_num": "V40-01-01-02",
+					"shelf_num": "000040",
+					"shelf_location": "010120",
+					"hardAddress": "110205210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "316",
+					"storage_num": "V40-01-01-03",
+					"shelf_num": "000040",
+					"shelf_location": "010120",
+					"hardAddress": "110205210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "317",
+					"storage_num": "V40-01-01-04",
+					"shelf_num": "000040",
+					"shelf_location": "010120",
+					"hardAddress": "110205210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "318",
+					"storage_num": "V40-02-01-01",
+					"shelf_num": "000040",
+					"shelf_location": "010120",
+					"hardAddress": "110205210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "319",
+					"storage_num": "V40-02-01-02",
+					"shelf_num": "000040",
+					"shelf_location": "010120",
+					"hardAddress": "110205210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "320",
+					"storage_num": "V40-02-01-03",
+					"shelf_num": "000040",
+					"shelf_location": "010120",
+					"hardAddress": "110205210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "321",
+					"storage_num": "V40-02-01-04",
+					"shelf_num": "000040",
+					"shelf_location": "010120",
+					"hardAddress": "110205210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "322",
+					"storage_num": "V41-01-01-01",
+					"shelf_num": "000041",
+					"shelf_location": "020120",
+					"hardAddress": "110206210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "323",
+					"storage_num": "V41-01-01-02",
+					"shelf_num": "000041",
+					"shelf_location": "020120",
+					"hardAddress": "110206210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "324",
+					"storage_num": "V41-01-01-03",
+					"shelf_num": "000041",
+					"shelf_location": "020120",
+					"hardAddress": "110206210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "325",
+					"storage_num": "V41-01-01-04",
+					"shelf_num": "000041",
+					"shelf_location": "020120",
+					"hardAddress": "110206210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "326",
+					"storage_num": "V41-02-01-01",
+					"shelf_num": "000041",
+					"shelf_location": "020120",
+					"hardAddress": "110206210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "327",
+					"storage_num": "V41-02-01-02",
+					"shelf_num": "000041",
+					"shelf_location": "020120",
+					"hardAddress": "110206210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "328",
+					"storage_num": "V41-02-01-03",
+					"shelf_num": "000041",
+					"shelf_location": "020120",
+					"hardAddress": "110206210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "329",
+					"storage_num": "V41-02-01-04",
+					"shelf_num": "000041",
+					"shelf_location": "020120",
+					"hardAddress": "110206210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "330",
+					"storage_num": "V42-01-01-01",
+					"shelf_num": "000042",
+					"shelf_location": "030120",
+					"hardAddress": "110207210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "331",
+					"storage_num": "V42-01-01-02",
+					"shelf_num": "000042",
+					"shelf_location": "030120",
+					"hardAddress": "110207210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "332",
+					"storage_num": "V42-01-01-03",
+					"shelf_num": "000042",
+					"shelf_location": "030120",
+					"hardAddress": "110207210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "333",
+					"storage_num": "V42-01-01-04",
+					"shelf_num": "000042",
+					"shelf_location": "030120",
+					"hardAddress": "110207210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "334",
+					"storage_num": "V42-02-01-01",
+					"shelf_num": "000042",
+					"shelf_location": "030120",
+					"hardAddress": "110207210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "335",
+					"storage_num": "V42-02-01-02",
+					"shelf_num": "000042",
+					"shelf_location": "030120",
+					"hardAddress": "110207210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "336",
+					"storage_num": "V42-02-01-03",
+					"shelf_num": "000042",
+					"shelf_location": "030120",
+					"hardAddress": "110207210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "337",
+					"storage_num": "V42-02-01-04",
+					"shelf_num": "000042",
+					"shelf_location": "030120",
+					"hardAddress": "110207210",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "338",
+					"storage_num": "V43-01-01-01",
+					"shelf_num": "000043",
+					"shelf_location": "050120",
+					"hardAddress": "110201310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "339",
+					"storage_num": "V43-01-01-02",
+					"shelf_num": "000043",
+					"shelf_location": "050120",
+					"hardAddress": "110201310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "340",
+					"storage_num": "V43-01-01-03",
+					"shelf_num": "000043",
+					"shelf_location": "050120",
+					"hardAddress": "110201310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "341",
+					"storage_num": "V43-01-01-04",
+					"shelf_num": "000043",
+					"shelf_location": "050120",
+					"hardAddress": "110201310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "342",
+					"storage_num": "V43-02-01-01",
+					"shelf_num": "000043",
+					"shelf_location": "050120",
+					"hardAddress": "110201310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "343",
+					"storage_num": "V43-02-01-02",
+					"shelf_num": "000043",
+					"shelf_location": "050120",
+					"hardAddress": "110201310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "344",
+					"storage_num": "V43-02-01-03",
+					"shelf_num": "000043",
+					"shelf_location": "050120",
+					"hardAddress": "110201310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "345",
+					"storage_num": "V43-02-01-04",
+					"shelf_num": "000043",
+					"shelf_location": "050120",
+					"hardAddress": "110201310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "346",
+					"storage_num": "V44-01-01-01",
+					"shelf_num": "000044",
+					"shelf_location": "060120",
+					"hardAddress": "110202310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "347",
+					"storage_num": "V44-01-01-02",
+					"shelf_num": "000044",
+					"shelf_location": "060120",
+					"hardAddress": "110202310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "348",
+					"storage_num": "V44-01-01-03",
+					"shelf_num": "000044",
+					"shelf_location": "060120",
+					"hardAddress": "110202310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "349",
+					"storage_num": "V44-01-01-04",
+					"shelf_num": "000044",
+					"shelf_location": "060120",
+					"hardAddress": "110202310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "350",
+					"storage_num": "V44-02-01-01",
+					"shelf_num": "000044",
+					"shelf_location": "060120",
+					"hardAddress": "110202310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "351",
+					"storage_num": "V44-02-01-02",
+					"shelf_num": "000044",
+					"shelf_location": "060120",
+					"hardAddress": "110202310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "352",
+					"storage_num": "V44-02-01-03",
+					"shelf_num": "000044",
+					"shelf_location": "060120",
+					"hardAddress": "110202310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "353",
+					"storage_num": "V44-02-01-04",
+					"shelf_num": "000044",
+					"shelf_location": "060120",
+					"hardAddress": "110202310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "354",
+					"storage_num": "V45-01-01-01",
+					"shelf_num": "000045",
+					"shelf_location": "070120",
+					"hardAddress": "110203310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "355",
+					"storage_num": "V45-01-01-02",
+					"shelf_num": "000045",
+					"shelf_location": "070120",
+					"hardAddress": "110203310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "356",
+					"storage_num": "V45-01-01-03",
+					"shelf_num": "000045",
+					"shelf_location": "070120",
+					"hardAddress": "110203310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "357",
+					"storage_num": "V45-01-01-04",
+					"shelf_num": "000045",
+					"shelf_location": "070120",
+					"hardAddress": "110203310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "358",
+					"storage_num": "V45-02-01-01",
+					"shelf_num": "000045",
+					"shelf_location": "070120",
+					"hardAddress": "110203310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "359",
+					"storage_num": "V45-02-01-02",
+					"shelf_num": "000045",
+					"shelf_location": "070120",
+					"hardAddress": "110203310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "360",
+					"storage_num": "V45-02-01-03",
+					"shelf_num": "000045",
+					"shelf_location": "070120",
+					"hardAddress": "110203310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "361",
+					"storage_num": "V45-02-01-04",
+					"shelf_num": "000045",
+					"shelf_location": "070120",
+					"hardAddress": "110203310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "362",
+					"storage_num": "V46-01-01-01",
+					"shelf_num": "000046",
+					"shelf_location": "080120",
+					"hardAddress": "110204310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "363",
+					"storage_num": "V46-01-01-02",
+					"shelf_num": "000046",
+					"shelf_location": "080120",
+					"hardAddress": "110204310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "364",
+					"storage_num": "V46-01-01-03",
+					"shelf_num": "000046",
+					"shelf_location": "080120",
+					"hardAddress": "110204310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "365",
+					"storage_num": "V46-01-01-04",
+					"shelf_num": "000046",
+					"shelf_location": "080120",
+					"hardAddress": "110204310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "366",
+					"storage_num": "V46-02-01-01",
+					"shelf_num": "000046",
+					"shelf_location": "080120",
+					"hardAddress": "110204310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "367",
+					"storage_num": "V46-02-01-02",
+					"shelf_num": "000046",
+					"shelf_location": "080120",
+					"hardAddress": "110204310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "368",
+					"storage_num": "V46-02-01-03",
+					"shelf_num": "000046",
+					"shelf_location": "080120",
+					"hardAddress": "110204310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "369",
+					"storage_num": "V46-02-01-04",
+					"shelf_num": "000046",
+					"shelf_location": "080120",
+					"hardAddress": "110204310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "370",
+					"storage_num": "V47-01-01-01",
+					"shelf_num": "000047",
+					"shelf_location": "090120",
+					"hardAddress": "110205310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "371",
+					"storage_num": "V47-01-01-02",
+					"shelf_num": "000047",
+					"shelf_location": "090120",
+					"hardAddress": "110205310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "372",
+					"storage_num": "V47-01-01-03",
+					"shelf_num": "000047",
+					"shelf_location": "090120",
+					"hardAddress": "110205310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "373",
+					"storage_num": "V47-01-01-04",
+					"shelf_num": "000047",
+					"shelf_location": "090120",
+					"hardAddress": "110205310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "374",
+					"storage_num": "V47-02-01-01",
+					"shelf_num": "000047",
+					"shelf_location": "090120",
+					"hardAddress": "110205310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "375",
+					"storage_num": "V47-02-01-02",
+					"shelf_num": "000047",
+					"shelf_location": "090120",
+					"hardAddress": "110205310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "376",
+					"storage_num": "V47-02-01-03",
+					"shelf_num": "000047",
+					"shelf_location": "090120",
+					"hardAddress": "110205310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "377",
+					"storage_num": "V47-02-01-04",
+					"shelf_num": "000047",
+					"shelf_location": "090120",
+					"hardAddress": "110205310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "378",
+					"storage_num": "V48-01-01-01",
+					"shelf_num": "000048",
+					"shelf_location": "100120",
+					"hardAddress": "110206310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "379",
+					"storage_num": "V48-01-01-02",
+					"shelf_num": "000048",
+					"shelf_location": "100120",
+					"hardAddress": "110206310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "380",
+					"storage_num": "V48-01-01-03",
+					"shelf_num": "000048",
+					"shelf_location": "100120",
+					"hardAddress": "110206310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "381",
+					"storage_num": "V48-01-01-04",
+					"shelf_num": "000048",
+					"shelf_location": "100120",
+					"hardAddress": "110206310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "382",
+					"storage_num": "V48-02-01-01",
+					"shelf_num": "000048",
+					"shelf_location": "100120",
+					"hardAddress": "110206310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "383",
+					"storage_num": "V48-02-01-02",
+					"shelf_num": "000048",
+					"shelf_location": "100120",
+					"hardAddress": "110206310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "384",
+					"storage_num": "V48-02-01-03",
+					"shelf_num": "000048",
+					"shelf_location": "100120",
+					"hardAddress": "110206310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "385",
+					"storage_num": "V48-02-01-04",
+					"shelf_num": "000048",
+					"shelf_location": "100120",
+					"hardAddress": "110206310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "386",
+					"storage_num": "V49-01-01-01",
+					"shelf_num": "000049",
+					"shelf_location": "010110",
+					"hardAddress": "110207310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "387",
+					"storage_num": "V49-01-01-02",
+					"shelf_num": "000049",
+					"shelf_location": "010110",
+					"hardAddress": "110207310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "388",
+					"storage_num": "V49-01-01-03",
+					"shelf_num": "000049",
+					"shelf_location": "010110",
+					"hardAddress": "110207310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "389",
+					"storage_num": "V49-01-01-04",
+					"shelf_num": "000049",
+					"shelf_location": "010110",
+					"hardAddress": "110207310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "390",
+					"storage_num": "V49-02-01-01",
+					"shelf_num": "000049",
+					"shelf_location": "010110",
+					"hardAddress": "110207310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "391",
+					"storage_num": "V49-02-01-02",
+					"shelf_num": "000049",
+					"shelf_location": "010110",
+					"hardAddress": "110207310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "392",
+					"storage_num": "V49-02-01-03",
+					"shelf_num": "000049",
+					"shelf_location": "010110",
+					"hardAddress": "110207310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "393",
+					"storage_num": "V49-02-01-04",
+					"shelf_num": "000049",
+					"shelf_location": "010110",
+					"hardAddress": "110207310",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "394",
+					"storage_num": "V50-01-01-01",
+					"shelf_num": "000050",
+					"shelf_location": "020110",
+					"hardAddress": "110201410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "395",
+					"storage_num": "V50-01-01-02",
+					"shelf_num": "000050",
+					"shelf_location": "020110",
+					"hardAddress": "110201410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "396",
+					"storage_num": "V50-01-01-03",
+					"shelf_num": "000050",
+					"shelf_location": "020110",
+					"hardAddress": "110201410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "397",
+					"storage_num": "V50-01-01-04",
+					"shelf_num": "000050",
+					"shelf_location": "020110",
+					"hardAddress": "110201410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "398",
+					"storage_num": "V50-02-01-01",
+					"shelf_num": "000050",
+					"shelf_location": "020110",
+					"hardAddress": "110201410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "399",
+					"storage_num": "V50-02-01-02",
+					"shelf_num": "000050",
+					"shelf_location": "020110",
+					"hardAddress": "110201410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "400",
+					"storage_num": "V50-02-01-03",
+					"shelf_num": "000050",
+					"shelf_location": "020110",
+					"hardAddress": "110201410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "401",
+					"storage_num": "V50-02-01-04",
+					"shelf_num": "000050",
+					"shelf_location": "020110",
+					"hardAddress": "110201410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "402",
+					"storage_num": "V51-01-01-01",
+					"shelf_num": "000051",
+					"shelf_location": "030110",
+					"hardAddress": "110202410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "403",
+					"storage_num": "V51-01-01-02",
+					"shelf_num": "000051",
+					"shelf_location": "030110",
+					"hardAddress": "110202410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "404",
+					"storage_num": "V51-01-01-03",
+					"shelf_num": "000051",
+					"shelf_location": "030110",
+					"hardAddress": "110202410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "405",
+					"storage_num": "V51-01-01-04",
+					"shelf_num": "000051",
+					"shelf_location": "030110",
+					"hardAddress": "110202410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "406",
+					"storage_num": "V51-02-01-01",
+					"shelf_num": "000051",
+					"shelf_location": "030110",
+					"hardAddress": "110202410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "407",
+					"storage_num": "V51-02-01-02",
+					"shelf_num": "000051",
+					"shelf_location": "030110",
+					"hardAddress": "110202410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "408",
+					"storage_num": "V51-02-01-03",
+					"shelf_num": "000051",
+					"shelf_location": "030110",
+					"hardAddress": "110202410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "409",
+					"storage_num": "V51-02-01-04",
+					"shelf_num": "000051",
+					"shelf_location": "030110",
+					"hardAddress": "110202410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "410",
+					"storage_num": "V52-01-01-01",
+					"shelf_num": "000052",
+					"shelf_location": "050110",
+					"hardAddress": "110203410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "411",
+					"storage_num": "V52-01-01-02",
+					"shelf_num": "000052",
+					"shelf_location": "050110",
+					"hardAddress": "110203410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "412",
+					"storage_num": "V52-01-01-03",
+					"shelf_num": "000052",
+					"shelf_location": "050110",
+					"hardAddress": "110203410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "413",
+					"storage_num": "V52-01-01-04",
+					"shelf_num": "000052",
+					"shelf_location": "050110",
+					"hardAddress": "110203410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "414",
+					"storage_num": "V52-02-01-01",
+					"shelf_num": "000052",
+					"shelf_location": "050110",
+					"hardAddress": "110203410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "415",
+					"storage_num": "V52-02-01-02",
+					"shelf_num": "000052",
+					"shelf_location": "050110",
+					"hardAddress": "110203410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "416",
+					"storage_num": "V52-02-01-03",
+					"shelf_num": "000052",
+					"shelf_location": "050110",
+					"hardAddress": "110203410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "417",
+					"storage_num": "V52-02-01-04",
+					"shelf_num": "000052",
+					"shelf_location": "050110",
+					"hardAddress": "110203410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "418",
+					"storage_num": "V53-01-01-01",
+					"shelf_num": "000053",
+					"shelf_location": "060110",
+					"hardAddress": "110204410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "419",
+					"storage_num": "V53-01-01-02",
+					"shelf_num": "000053",
+					"shelf_location": "060110",
+					"hardAddress": "110204410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "420",
+					"storage_num": "V53-01-01-03",
+					"shelf_num": "000053",
+					"shelf_location": "060110",
+					"hardAddress": "110204410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "421",
+					"storage_num": "V53-01-01-04",
+					"shelf_num": "000053",
+					"shelf_location": "060110",
+					"hardAddress": "110204410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "422",
+					"storage_num": "V53-02-01-01",
+					"shelf_num": "000053",
+					"shelf_location": "060110",
+					"hardAddress": "110204410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "423",
+					"storage_num": "V53-02-01-02",
+					"shelf_num": "000053",
+					"shelf_location": "060110",
+					"hardAddress": "110204410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "424",
+					"storage_num": "V53-02-01-03",
+					"shelf_num": "000053",
+					"shelf_location": "060110",
+					"hardAddress": "110204410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "425",
+					"storage_num": "V53-02-01-04",
+					"shelf_num": "000053",
+					"shelf_location": "060110",
+					"hardAddress": "110204410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "426",
+					"storage_num": "V54-01-01-01",
+					"shelf_num": "000054",
+					"shelf_location": "070110",
+					"hardAddress": "110205410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "427",
+					"storage_num": "V54-01-01-02",
+					"shelf_num": "000054",
+					"shelf_location": "070110",
+					"hardAddress": "110205410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "428",
+					"storage_num": "V54-01-01-03",
+					"shelf_num": "000054",
+					"shelf_location": "070110",
+					"hardAddress": "110205410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "429",
+					"storage_num": "V54-01-01-04",
+					"shelf_num": "000054",
+					"shelf_location": "070110",
+					"hardAddress": "110205410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "430",
+					"storage_num": "V54-02-01-01",
+					"shelf_num": "000054",
+					"shelf_location": "070110",
+					"hardAddress": "110205410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "431",
+					"storage_num": "V54-02-01-02",
+					"shelf_num": "000054",
+					"shelf_location": "070110",
+					"hardAddress": "110205410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "432",
+					"storage_num": "V54-02-01-03",
+					"shelf_num": "000054",
+					"shelf_location": "070110",
+					"hardAddress": "110205410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "433",
+					"storage_num": "V54-02-01-04",
+					"shelf_num": "000054",
+					"shelf_location": "070110",
+					"hardAddress": "110205410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "434",
+					"storage_num": "V55-01-01-01",
+					"shelf_num": "000055",
+					"shelf_location": "080110",
+					"hardAddress": "110206410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "435",
+					"storage_num": "V55-01-01-02",
+					"shelf_num": "000055",
+					"shelf_location": "080110",
+					"hardAddress": "110206410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "436",
+					"storage_num": "V55-01-01-03",
+					"shelf_num": "000055",
+					"shelf_location": "080110",
+					"hardAddress": "110206410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "437",
+					"storage_num": "V55-01-01-04",
+					"shelf_num": "000055",
+					"shelf_location": "080110",
+					"hardAddress": "110206410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "438",
+					"storage_num": "V55-02-01-01",
+					"shelf_num": "000055",
+					"shelf_location": "080110",
+					"hardAddress": "110206410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "439",
+					"storage_num": "V55-02-01-02",
+					"shelf_num": "000055",
+					"shelf_location": "080110",
+					"hardAddress": "110206410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "440",
+					"storage_num": "V55-02-01-03",
+					"shelf_num": "000055",
+					"shelf_location": "080110",
+					"hardAddress": "110206410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "441",
+					"storage_num": "V55-02-01-04",
+					"shelf_num": "000055",
+					"shelf_location": "080110",
+					"hardAddress": "110206410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "442",
+					"storage_num": "V56-01-01-01",
+					"shelf_num": "000056",
+					"shelf_location": "090110",
+					"hardAddress": "110207410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "443",
+					"storage_num": "V56-01-01-02",
+					"shelf_num": "000056",
+					"shelf_location": "090110",
+					"hardAddress": "110207410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "444",
+					"storage_num": "V56-01-01-03",
+					"shelf_num": "000056",
+					"shelf_location": "090110",
+					"hardAddress": "110207410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "445",
+					"storage_num": "V56-01-01-04",
+					"shelf_num": "000056",
+					"shelf_location": "090110",
+					"hardAddress": "110207410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "446",
+					"storage_num": "V56-02-01-01",
+					"shelf_num": "000056",
+					"shelf_location": "090110",
+					"hardAddress": "110207410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "447",
+					"storage_num": "V56-02-01-02",
+					"shelf_num": "000056",
+					"shelf_location": "090110",
+					"hardAddress": "110207410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "448",
+					"storage_num": "V56-02-01-03",
+					"shelf_num": "000056",
+					"shelf_location": "090110",
+					"hardAddress": "110207410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "449",
+					"storage_num": "V56-02-01-04",
+					"shelf_num": "000056",
+					"shelf_location": "090110",
+					"hardAddress": "110207410",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "450",
+					"storage_num": "V57-01-01-01",
+					"shelf_num": "000057",
+					"shelf_location": "100110",
+					"hardAddress": "110301110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "451",
+					"storage_num": "V57-01-01-02",
+					"shelf_num": "000057",
+					"shelf_location": "100110",
+					"hardAddress": "110301110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "452",
+					"storage_num": "V57-01-01-03",
+					"shelf_num": "000057",
+					"shelf_location": "100110",
+					"hardAddress": "110301110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "453",
+					"storage_num": "V57-01-01-04",
+					"shelf_num": "000057",
+					"shelf_location": "100110",
+					"hardAddress": "110301110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "454",
+					"storage_num": "V57-02-01-01",
+					"shelf_num": "000057",
+					"shelf_location": "100110",
+					"hardAddress": "110301110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "455",
+					"storage_num": "V57-02-01-02",
+					"shelf_num": "000057",
+					"shelf_location": "100110",
+					"hardAddress": "110301110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "456",
+					"storage_num": "V57-02-01-03",
+					"shelf_num": "000057",
+					"shelf_location": "100110",
+					"hardAddress": "110301110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "457",
+					"storage_num": "V57-02-01-04",
+					"shelf_num": "000057",
+					"shelf_location": "100110",
+					"hardAddress": "110301110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "458",
+					"storage_num": "V58-01-01-01",
+					"shelf_num": "000090010",
+					"shelf_location": "100030",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				},{
+					"id": "459",
+					"storage_num": "V58-02-01-01",
+					"shelf_num": "000090010",
+					"shelf_location": "100030",
+					"hardAddress": "110101110",
+					"desc": "儲位",
+					"type": "storage"
+				}
+            ]
+        },
+        "CAPS": {
+            "driver": "iamech_CAPS",
+            "version": "1.0.0.1",
+            "desc": "漢來科技",
+            "iis_url": "http://10.248.82.110:8090/DepotWeb.asmx",
+            "caps_pots": [{
+                    "id": "1",
+                    "bizAddress": "101",
+                    "hardAddress": "101",
+                    "desc": "二樓CAPS理貨站-101站",
+                    "seeds": [{
+                            "id": "1",
+                            "bizAddress": "0001",
+                            "hardAddress": "101-01",
+                            "desc": "二樓CAPS理貨站-101站-密林01"
+                        }, {
+                            "id": "2",
+                            "bizAddress": "0002",
+                            "hardAddress": "101-02",
+                            "desc": "二樓CAPS理貨站-101站-密林02"
+                        }, {
+                            "id": "3",
+                            "bizAddress": "0003",
+                            "hardAddress": "101-03",
+                            "desc": "二樓CAPS理貨站-101站-密林03"
+                        }, {
+                            "id": "4",
+                            "bizAddress": "0004",
+                            "hardAddress": "101-04",
+                            "desc": "二樓CAPS理貨站-101站-密林04"
+                        }, {
+                            "id": "5",
+                            "bizAddress": "0005",
+                            "hardAddress": "101-05",
+                            "desc": "二樓CAPS理貨站-101站-密林05"
+                        }, {
+                            "id": "6",
+                            "bizAddress": "0006",
+                            "hardAddress": "101-06",
+                            "desc": "二樓CAPS理貨站-101站-密林06"
+                        }, {
+                            "id": "7",
+                            "bizAddress": "0007",
+                            "hardAddress": "101-07",
+                            "desc": "二樓CAPS理貨站-101站-密林07"
+                        }, {
+                            "id": "8",
+                            "bizAddress": "0008",
+                            "hardAddress": "101-08",
+                            "desc": "二樓CAPS理貨站-101站-密林08"
+                        }, {
+                            "id": "9",
+                            "bizAddress": "0009",
+                            "hardAddress": "101-09",
+                            "desc": "二樓CAPS理貨站-101站-密林09"
+                        }, {
+                            "id": "10",
+                            "bizAddress": "0010",
+                            "hardAddress": "101-10",
+                            "desc": "二樓CAPS理貨站-101站-密林10"
+                        }, {
+                            "id": "11",
+                            "bizAddress": "0011",
+                            "hardAddress": "101-11",
+                            "desc": "二樓CAPS理貨站-101站-密林11"
+                        }, {
+                            "id": "12",
+                            "bizAddress": "0012",
+                            "hardAddress": "101-12",
+                            "desc": "二樓CAPS理貨站-101站-密林12"
+                        }, {
+                            "id": "13",
+                            "bizAddress": "0013",
+                            "hardAddress": "101-13",
+                            "desc": "二樓CAPS理貨站-101站-密林13"
+                        }, {
+                            "id": "14",
+                            "bizAddress": "0014",
+                            "hardAddress": "101-14",
+                            "desc": "二樓CAPS理貨站-101站-密林14"
+                        }, {
+                            "id": "15",
+                            "bizAddress": "0015",
+                            "hardAddress": "101-15",
+                            "desc": "二樓CAPS理貨站-101站-密林15"
+                        }, {
+                            "id": "16",
+                            "bizAddress": "0016",
+                            "hardAddress": "101-16",
+                            "desc": "二樓CAPS理貨站-101站-密林16"
+                        }
+                    ]
+                }, {
+                    "id": "2",
+                    "bizAddress": "102",
+                    "hardAddress": "102",
+                    "desc": "二樓CAPS理貨站-102站",
+                    "seeds": [{
+                            "id": "1",
+                            "bizAddress": "0001",
+                            "hardAddress": "102-01",
+                            "desc": "二樓CAPS理貨站-102站-密林01"
+                        }, {
+                            "id": "2",
+                            "bizAddress": "0002",
+                            "hardAddress": "102-02",
+                            "desc": "二樓CAPS理貨站-102站-密林02"
+                        }, {
+                            "id": "3",
+                            "bizAddress": "0003",
+                            "hardAddress": "102-03",
+                            "desc": "二樓CAPS理貨站-102站-密林03"
+                        }, {
+                            "id": "4",
+                            "bizAddress": "0004",
+                            "hardAddress": "102-04",
+                            "desc": "二樓CAPS理貨站-102站-密林04"
+                        }, {
+                            "id": "5",
+                            "bizAddress": "0005",
+                            "hardAddress": "102-05",
+                            "desc": "二樓CAPS理貨站-102站-密林05"
+                        }, {
+                            "id": "6",
+                            "bizAddress": "0006",
+                            "hardAddress": "102-06",
+                            "desc": "二樓CAPS理貨站-102站-密林06"
+                        }, {
+                            "id": "7",
+                            "bizAddress": "0007",
+                            "hardAddress": "102-07",
+                            "desc": "二樓CAPS理貨站-102站-密林07"
+                        }, {
+                            "id": "8",
+                            "bizAddress": "0008",
+                            "hardAddress": "102-08",
+                            "desc": "二樓CAPS理貨站-102站-密林08"
+                        }, {
+                            "id": "9",
+                            "bizAddress": "0009",
+                            "hardAddress": "102-09",
+                            "desc": "二樓CAPS理貨站-102站-密林09"
+                        }, {
+                            "id": "10",
+                            "bizAddress": "0010",
+                            "hardAddress": "102-10",
+                            "desc": "二樓CAPS理貨站-102站-密林10"
+                        }, {
+                            "id": "11",
+                            "bizAddress": "0011",
+                            "hardAddress": "102-11",
+                            "desc": "二樓CAPS理貨站-102站-密林11"
+                        }, {
+                            "id": "12",
+                            "bizAddress": "0012",
+                            "hardAddress": "102-12",
+                            "desc": "二樓CAPS理貨站-102站-密林12"
+                        }, {
+                            "id": "13",
+                            "bizAddress": "0013",
+                            "hardAddress": "102-13",
+                            "desc": "二樓CAPS理貨站-102站-密林13"
+                        }, {
+                            "id": "14",
+                            "bizAddress": "0014",
+                            "hardAddress": "102-14",
+                            "desc": "二樓CAPS理貨站-102站-密林14"
+                        }, {
+                            "id": "15",
+                            "bizAddress": "0015",
+                            "hardAddress": "102-15",
+                            "desc": "二樓CAPS理貨站-102站-密林15"
+                        }, {
+                            "id": "16",
+                            "bizAddress": "0016",
+                            "hardAddress": "102-16",
+                            "desc": "二樓CAPS理貨站-102站-密林16"
+                        }
+                    ]
+                }, {
+                    "id": "3",
+                    "bizAddress": "103",
+                    "hardAddress": "103",
+                    "desc": "二樓CAPS理貨站-103站",
+                    "seeds": [{
+                            "id": "1",
+                            "bizAddress": "0001",
+                            "hardAddress": "103-01",
+                            "desc": "二樓CAPS理貨站-103站-密林01"
+                        }, {
+                            "id": "2",
+                            "bizAddress": "0002",
+                            "hardAddress": "103-02",
+                            "desc": "二樓CAPS理貨站-103站-密林02"
+                        }, {
+                            "id": "3",
+                            "bizAddress": "0003",
+                            "hardAddress": "103-03",
+                            "desc": "二樓CAPS理貨站-103站-密林03"
+                        }, {
+                            "id": "4",
+                            "bizAddress": "0004",
+                            "hardAddress": "103-04",
+                            "desc": "二樓CAPS理貨站-103站-密林04"
+                        }, {
+                            "id": "5",
+                            "bizAddress": "0005",
+                            "hardAddress": "103-05",
+                            "desc": "二樓CAPS理貨站-103站-密林05"
+                        }, {
+                            "id": "6",
+                            "bizAddress": "0006",
+                            "hardAddress": "103-06",
+                            "desc": "二樓CAPS理貨站-103站-密林06"
+                        }, {
+                            "id": "7",
+                            "bizAddress": "0007",
+                            "hardAddress": "103-07",
+                            "desc": "二樓CAPS理貨站-103站-密林07"
+                        }, {
+                            "id": "8",
+                            "bizAddress": "0008",
+                            "hardAddress": "103-08",
+                            "desc": "二樓CAPS理貨站-103站-密林08"
+                        }, {
+                            "id": "9",
+                            "bizAddress": "0009",
+                            "hardAddress": "103-09",
+                            "desc": "二樓CAPS理貨站-103站-密林09"
+                        }, {
+                            "id": "10",
+                            "bizAddress": "0010",
+                            "hardAddress": "103-10",
+                            "desc": "二樓CAPS理貨站-103站-密林10"
+                        }, {
+                            "id": "11",
+                            "bizAddress": "0011",
+                            "hardAddress": "103-11",
+                            "desc": "二樓CAPS理貨站-103站-密林11"
+                        }, {
+                            "id": "12",
+                            "bizAddress": "0012",
+                            "hardAddress": "103-12",
+                            "desc": "二樓CAPS理貨站-103站-密林12"
+                        }, {
+                            "id": "13",
+                            "bizAddress": "0013",
+                            "hardAddress": "103-13",
+                            "desc": "二樓CAPS理貨站-103站-密林13"
+                        }, {
+                            "id": "14",
+                            "bizAddress": "0014",
+                            "hardAddress": "103-14",
+                            "desc": "二樓CAPS理貨站-103站-密林14"
+                        }, {
+                            "id": "15",
+                            "bizAddress": "0015",
+                            "hardAddress": "103-15",
+                            "desc": "二樓CAPS理貨站-103站-密林15"
+                        }, {
+                            "id": "16",
+                            "bizAddress": "0016",
+                            "hardAddress": "103-16",
+                            "desc": "二樓CAPS理貨站-103站-密林16"
+                        }
+                    ]
+                }, {
+                    "id": "4",
+                    "bizAddress": "104",
+                    "hardAddress": "104",
+                    "desc": "二樓CAPS理貨站-104站",
+                    "seeds": [{
+                            "id": "1",
+                            "bizAddress": "0001",
+                            "hardAddress": "104-01",
+                            "desc": "二樓CAPS理貨站-104站-密林01"
+                        }, {
+                            "id": "2",
+                            "bizAddress": "0002",
+                            "hardAddress": "104-02",
+                            "desc": "二樓CAPS理貨站-104站-密林02"
+                        }, {
+                            "id": "3",
+                            "bizAddress": "0003",
+                            "hardAddress": "104-03",
+                            "desc": "二樓CAPS理貨站-104站-密林03"
+                        }, {
+                            "id": "4",
+                            "bizAddress": "0004",
+                            "hardAddress": "104-04",
+                            "desc": "二樓CAPS理貨站-104站-密林04"
+                        }, {
+                            "id": "5",
+                            "bizAddress": "0005",
+                            "hardAddress": "104-05",
+                            "desc": "二樓CAPS理貨站-104站-密林05"
+                        }, {
+                            "id": "6",
+                            "bizAddress": "0006",
+                            "hardAddress": "104-06",
+                            "desc": "二樓CAPS理貨站-104站-密林06"
+                        }, {
+                            "id": "7",
+                            "bizAddress": "0007",
+                            "hardAddress": "104-07",
+                            "desc": "二樓CAPS理貨站-104站-密林07"
+                        }, {
+                            "id": "8",
+                            "bizAddress": "0008",
+                            "hardAddress": "104-08",
+                            "desc": "二樓CAPS理貨站-104站-密林08"
+                        }, {
+                            "id": "9",
+                            "bizAddress": "0009",
+                            "hardAddress": "104-09",
+                            "desc": "二樓CAPS理貨站-104站-密林09"
+                        }, {
+                            "id": "10",
+                            "bizAddress": "0010",
+                            "hardAddress": "104-10",
+                            "desc": "二樓CAPS理貨站-104站-密林10"
+                        }, {
+                            "id": "11",
+                            "bizAddress": "0011",
+                            "hardAddress": "104-11",
+                            "desc": "二樓CAPS理貨站-104站-密林11"
+                        }, {
+                            "id": "12",
+                            "bizAddress": "0012",
+                            "hardAddress": "104-12",
+                            "desc": "二樓CAPS理貨站-104站-密林12"
+                        }, {
+                            "id": "13",
+                            "bizAddress": "0013",
+                            "hardAddress": "104-13",
+                            "desc": "二樓CAPS理貨站-104站-密林13"
+                        }, {
+                            "id": "14",
+                            "bizAddress": "0014",
+                            "hardAddress": "104-14",
+                            "desc": "二樓CAPS理貨站-104站-密林14"
+                        }, {
+                            "id": "15",
+                            "bizAddress": "0015",
+                            "hardAddress": "104-15",
+                            "desc": "二樓CAPS理貨站-104站-密林15"
+                        }, {
+                            "id": "16",
+                            "bizAddress": "0016",
+                            "hardAddress": "104-16",
+                            "desc": "二樓CAPS理貨站-104站-密林16"
+                        }
+                    ]
+                }, {
+                    "id": "5",
+                    "bizAddress": "105",
+                    "hardAddress": "105",
+                    "desc": "二樓CAPS理貨站-105站",
+                    "seeds": [{
+                            "id": "1",
+                            "bizAddress": "0001",
+                            "hardAddress": "105-01",
+                            "desc": "二樓CAPS理貨站-105站-密林01"
+                        }, {
+                            "id": "2",
+                            "bizAddress": "0002",
+                            "hardAddress": "105-02",
+                            "desc": "二樓CAPS理貨站-105站-密林02"
+                        }, {
+                            "id": "3",
+                            "bizAddress": "0003",
+                            "hardAddress": "105-03",
+                            "desc": "二樓CAPS理貨站-105站-密林03"
+                        }, {
+                            "id": "4",
+                            "bizAddress": "0004",
+                            "hardAddress": "105-04",
+                            "desc": "二樓CAPS理貨站-105站-密林04"
+                        }, {
+                            "id": "5",
+                            "bizAddress": "0005",
+                            "hardAddress": "105-05",
+                            "desc": "二樓CAPS理貨站-105站-密林05"
+                        }, {
+                            "id": "6",
+                            "bizAddress": "0006",
+                            "hardAddress": "105-06",
+                            "desc": "二樓CAPS理貨站-105站-密林06"
+                        }, {
+                            "id": "7",
+                            "bizAddress": "0007",
+                            "hardAddress": "105-07",
+                            "desc": "二樓CAPS理貨站-105站-密林07"
+                        }, {
+                            "id": "8",
+                            "bizAddress": "0008",
+                            "hardAddress": "105-08",
+                            "desc": "二樓CAPS理貨站-105站-密林08"
+                        }, {
+                            "id": "9",
+                            "bizAddress": "0009",
+                            "hardAddress": "105-09",
+                            "desc": "二樓CAPS理貨站-105站-密林09"
+                        }, {
+                            "id": "10",
+                            "bizAddress": "0010",
+                            "hardAddress": "105-10",
+                            "desc": "二樓CAPS理貨站-105站-密林10"
+                        }, {
+                            "id": "11",
+                            "bizAddress": "0011",
+                            "hardAddress": "105-11",
+                            "desc": "二樓CAPS理貨站-105站-密林11"
+                        }, {
+                            "id": "12",
+                            "bizAddress": "0012",
+                            "hardAddress": "105-12",
+                            "desc": "二樓CAPS理貨站-105站-密林12"
+                        }, {
+                            "id": "13",
+                            "bizAddress": "0013",
+                            "hardAddress": "105-13",
+                            "desc": "二樓CAPS理貨站-105站-密林13"
+                        }, {
+                            "id": "14",
+                            "bizAddress": "0014",
+                            "hardAddress": "105-14",
+                            "desc": "二樓CAPS理貨站-105站-密林14"
+                        }, {
+                            "id": "15",
+                            "bizAddress": "0015",
+                            "hardAddress": "105-15",
+                            "desc": "二樓CAPS理貨站-105站-密林15"
+                        }, {
+                            "id": "16",
+                            "bizAddress": "0016",
+                            "hardAddress": "105-16",
+                            "desc": "二樓CAPS理貨站-105站-密林16"
+                        }
+                    ]
+                }, {
+                    "id": "6",
+                    "bizAddress": "106",
+                    "hardAddress": "106",
+                    "desc": "二樓CAPS理貨站-106站",
+                    "seeds": [{
+                            "id": "1",
+                            "bizAddress": "0001",
+                            "hardAddress": "106-01",
+                            "desc": "二樓CAPS理貨站-106站-密林01"
+                        }, {
+                            "id": "2",
+                            "bizAddress": "0002",
+                            "hardAddress": "106-02",
+                            "desc": "二樓CAPS理貨站-106站-密林02"
+                        }, {
+                            "id": "3",
+                            "bizAddress": "0003",
+                            "hardAddress": "106-03",
+                            "desc": "二樓CAPS理貨站-106站-密林03"
+                        }, {
+                            "id": "4",
+                            "bizAddress": "0004",
+                            "hardAddress": "106-04",
+                            "desc": "二樓CAPS理貨站-106站-密林04"
+                        }, {
+                            "id": "5",
+                            "bizAddress": "0005",
+                            "hardAddress": "106-05",
+                            "desc": "二樓CAPS理貨站-106站-密林05"
+                        }, {
+                            "id": "6",
+                            "bizAddress": "0006",
+                            "hardAddress": "106-06",
+                            "desc": "二樓CAPS理貨站-106站-密林06"
+                        }, {
+                            "id": "7",
+                            "bizAddress": "0007",
+                            "hardAddress": "106-07",
+                            "desc": "二樓CAPS理貨站-106站-密林07"
+                        }, {
+                            "id": "8",
+                            "bizAddress": "0008",
+                            "hardAddress": "106-08",
+                            "desc": "二樓CAPS理貨站-106站-密林08"
+                        }, {
+                            "id": "9",
+                            "bizAddress": "0009",
+                            "hardAddress": "106-09",
+                            "desc": "二樓CAPS理貨站-106站-密林09"
+                        }, {
+                            "id": "10",
+                            "bizAddress": "0010",
+                            "hardAddress": "106-10",
+                            "desc": "二樓CAPS理貨站-106站-密林10"
+                        }, {
+                            "id": "11",
+                            "bizAddress": "0011",
+                            "hardAddress": "106-11",
+                            "desc": "二樓CAPS理貨站-106站-密林11"
+                        }, {
+                            "id": "12",
+                            "bizAddress": "0012",
+                            "hardAddress": "106-12",
+                            "desc": "二樓CAPS理貨站-106站-密林12"
+                        }, {
+                            "id": "13",
+                            "bizAddress": "0013",
+                            "hardAddress": "106-13",
+                            "desc": "二樓CAPS理貨站-106站-密林13"
+                        }, {
+                            "id": "14",
+                            "bizAddress": "0014",
+                            "hardAddress": "106-14",
+                            "desc": "二樓CAPS理貨站-106站-密林14"
+                        }, {
+                            "id": "15",
+                            "bizAddress": "0015",
+                            "hardAddress": "106-15",
+                            "desc": "二樓CAPS理貨站-106站-密林15"
+                        }, {
+                            "id": "16",
+                            "bizAddress": "0016",
+                            "hardAddress": "106-16",
+                            "desc": "二樓CAPS理貨站-106站-密林16"
+                        }
+                    ]
+                }, {
+                    "id": "7",
+                    "bizAddress": "107",
+                    "hardAddress": "107",
+                    "desc": "二樓CAPS理貨站-107站",
+                    "seeds": [{
+                            "id": "1",
+                            "bizAddress": "0001",
+                            "hardAddress": "107-01",
+                            "desc": "二樓CAPS理貨站-107站-密林01"
+                        }, {
+                            "id": "2",
+                            "bizAddress": "0002",
+                            "hardAddress": "107-02",
+                            "desc": "二樓CAPS理貨站-107站-密林02"
+                        }, {
+                            "id": "3",
+                            "bizAddress": "0003",
+                            "hardAddress": "107-03",
+                            "desc": "二樓CAPS理貨站-107站-密林03"
+                        }, {
+                            "id": "4",
+                            "bizAddress": "0004",
+                            "hardAddress": "107-04",
+                            "desc": "二樓CAPS理貨站-107站-密林04"
+                        }, {
+                            "id": "5",
+                            "bizAddress": "0005",
+                            "hardAddress": "107-05",
+                            "desc": "二樓CAPS理貨站-107站-密林05"
+                        }, {
+                            "id": "6",
+                            "bizAddress": "0006",
+                            "hardAddress": "107-06",
+                            "desc": "二樓CAPS理貨站-107站-密林06"
+                        }, {
+                            "id": "7",
+                            "bizAddress": "0007",
+                            "hardAddress": "107-07",
+                            "desc": "二樓CAPS理貨站-107站-密林07"
+                        }, {
+                            "id": "8",
+                            "bizAddress": "0008",
+                            "hardAddress": "107-08",
+                            "desc": "二樓CAPS理貨站-107站-密林08"
+                        }, {
+                            "id": "9",
+                            "bizAddress": "0009",
+                            "hardAddress": "107-09",
+                            "desc": "二樓CAPS理貨站-107站-密林09"
+                        }, {
+                            "id": "10",
+                            "bizAddress": "0010",
+                            "hardAddress": "107-10",
+                            "desc": "二樓CAPS理貨站-107站-密林10"
+                        }, {
+                            "id": "11",
+                            "bizAddress": "0011",
+                            "hardAddress": "107-11",
+                            "desc": "二樓CAPS理貨站-107站-密林11"
+                        }, {
+                            "id": "12",
+                            "bizAddress": "0012",
+                            "hardAddress": "107-12",
+                            "desc": "二樓CAPS理貨站-107站-密林12"
+                        }, {
+                            "id": "13",
+                            "bizAddress": "0013",
+                            "hardAddress": "107-13",
+                            "desc": "二樓CAPS理貨站-107站-密林13"
+                        }, {
+                            "id": "14",
+                            "bizAddress": "0014",
+                            "hardAddress": "107-14",
+                            "desc": "二樓CAPS理貨站-107站-密林14"
+                        }, {
+                            "id": "15",
+                            "bizAddress": "0015",
+                            "hardAddress": "107-15",
+                            "desc": "二樓CAPS理貨站-107站-密林15"
+                        }, {
+                            "id": "16",
+                            "bizAddress": "0016",
+                            "hardAddress": "107-16",
+                            "desc": "二樓CAPS理貨站-107站-密林16"
+                        }
+                    ]
+                }, {
+                    "id": "8",
+                    "bizAddress": "108",
+                    "hardAddress": "108",
+                    "desc": "二樓CAPS理貨站-108站",
+                    "seeds": [{
+                            "id": "1",
+                            "bizAddress": "0001",
+                            "hardAddress": "108-01",
+                            "desc": "二樓CAPS理貨站-108站-密林01"
+                        }, {
+                            "id": "2",
+                            "bizAddress": "0002",
+                            "hardAddress": "108-02",
+                            "desc": "二樓CAPS理貨站-108站-密林02"
+                        }, {
+                            "id": "3",
+                            "bizAddress": "0003",
+                            "hardAddress": "108-03",
+                            "desc": "二樓CAPS理貨站-108站-密林03"
+                        }, {
+                            "id": "4",
+                            "bizAddress": "0004",
+                            "hardAddress": "108-04",
+                            "desc": "二樓CAPS理貨站-108站-密林04"
+                        }, {
+                            "id": "5",
+                            "bizAddress": "0005",
+                            "hardAddress": "108-05",
+                            "desc": "二樓CAPS理貨站-108站-密林05"
+                        }, {
+                            "id": "6",
+                            "bizAddress": "0006",
+                            "hardAddress": "108-06",
+                            "desc": "二樓CAPS理貨站-108站-密林06"
+                        }, {
+                            "id": "7",
+                            "bizAddress": "0007",
+                            "hardAddress": "108-07",
+                            "desc": "二樓CAPS理貨站-108站-密林07"
+                        }, {
+                            "id": "8",
+                            "bizAddress": "0008",
+                            "hardAddress": "108-08",
+                            "desc": "二樓CAPS理貨站-108站-密林08"
+                        }, {
+                            "id": "9",
+                            "bizAddress": "0009",
+                            "hardAddress": "108-09",
+                            "desc": "二樓CAPS理貨站-108站-密林09"
+                        }, {
+                            "id": "10",
+                            "bizAddress": "0010",
+                            "hardAddress": "108-10",
+                            "desc": "二樓CAPS理貨站-108站-密林10"
+                        }, {
+                            "id": "11",
+                            "bizAddress": "0011",
+                            "hardAddress": "108-11",
+                            "desc": "二樓CAPS理貨站-108站-密林11"
+                        }, {
+                            "id": "12",
+                            "bizAddress": "0012",
+                            "hardAddress": "108-12",
+                            "desc": "二樓CAPS理貨站-108站-密林12"
+                        }, {
+                            "id": "13",
+                            "bizAddress": "0013",
+                            "hardAddress": "108-13",
+                            "desc": "二樓CAPS理貨站-108站-密林13"
+                        }, {
+                            "id": "14",
+                            "bizAddress": "0014",
+                            "hardAddress": "108-14",
+                            "desc": "二樓CAPS理貨站-108站-密林14"
+                        }, {
+                            "id": "15",
+                            "bizAddress": "0015",
+                            "hardAddress": "108-15",
+                            "desc": "二樓CAPS理貨站-108站-密林15"
+                        }, {
+                            "id": "16",
+                            "bizAddress": "0016",
+                            "hardAddress": "108-16",
+                            "desc": "二樓CAPS理貨站-108站-密林16"
+                        }
+                    ]
+                }, {
+                    "id": "9",
+                    "bizAddress": "109",
+                    "hardAddress": "109",
+                    "desc": "二樓CAPS理貨站-109站",
+                    "seeds": [{
+                            "id": "1",
+                            "bizAddress": "0001",
+                            "hardAddress": "109-01",
+                            "desc": "二樓CAPS理貨站-109站-密林01"
+                        }, {
+                            "id": "2",
+                            "bizAddress": "0002",
+                            "hardAddress": "109-02",
+                            "desc": "二樓CAPS理貨站-109站-密林02"
+                        }, {
+                            "id": "3",
+                            "bizAddress": "0003",
+                            "hardAddress": "109-03",
+                            "desc": "二樓CAPS理貨站-109站-密林03"
+                        }, {
+                            "id": "4",
+                            "bizAddress": "0004",
+                            "hardAddress": "109-04",
+                            "desc": "二樓CAPS理貨站-109站-密林04"
+                        }, {
+                            "id": "5",
+                            "bizAddress": "0005",
+                            "hardAddress": "109-05",
+                            "desc": "二樓CAPS理貨站-109站-密林05"
+                        }, {
+                            "id": "6",
+                            "bizAddress": "0006",
+                            "hardAddress": "109-06",
+                            "desc": "二樓CAPS理貨站-109站-密林06"
+                        }, {
+                            "id": "7",
+                            "bizAddress": "0007",
+                            "hardAddress": "109-07",
+                            "desc": "二樓CAPS理貨站-109站-密林07"
+                        }, {
+                            "id": "8",
+                            "bizAddress": "0008",
+                            "hardAddress": "109-08",
+                            "desc": "二樓CAPS理貨站-109站-密林08"
+                        }, {
+                            "id": "9",
+                            "bizAddress": "0009",
+                            "hardAddress": "109-09",
+                            "desc": "二樓CAPS理貨站-109站-密林09"
+                        }, {
+                            "id": "10",
+                            "bizAddress": "0010",
+                            "hardAddress": "109-10",
+                            "desc": "二樓CAPS理貨站-109站-密林10"
+                        }, {
+                            "id": "11",
+                            "bizAddress": "0011",
+                            "hardAddress": "109-11",
+                            "desc": "二樓CAPS理貨站-109站-密林11"
+                        }, {
+                            "id": "12",
+                            "bizAddress": "0012",
+                            "hardAddress": "109-12",
+                            "desc": "二樓CAPS理貨站-109站-密林12"
+                        }, {
+                            "id": "13",
+                            "bizAddress": "0013",
+                            "hardAddress": "109-13",
+                            "desc": "二樓CAPS理貨站-109站-密林13"
+                        }, {
+                            "id": "14",
+                            "bizAddress": "0014",
+                            "hardAddress": "109-14",
+                            "desc": "二樓CAPS理貨站-109站-密林14"
+                        }, {
+                            "id": "15",
+                            "bizAddress": "0015",
+                            "hardAddress": "109-15",
+                            "desc": "二樓CAPS理貨站-109站-密林15"
+                        }, {
+                            "id": "16",
+                            "bizAddress": "0016",
+                            "hardAddress": "109-16",
+                            "desc": "二樓CAPS理貨站-109站-密林16"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
