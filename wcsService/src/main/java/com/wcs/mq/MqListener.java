@@ -12,35 +12,36 @@ public class MqListener {
 	@Autowired
 	TallyService tallyService;
 	
-	@JmsListener(destination="channel1", containerFactory="queueListener")
-    public void readActiveQueue(String message) {
-        System.out.println("receive" + message);
-    }
+//	@JmsListener(destination="capsClick")
+//	public void readCaps(String message) {
+//		System.out.println("capsClick:"+message);
+//	}
+//	
+//	@JmsListener(destination="agvArrived")
+//	public void readAgv(String message) {
+//		System.out.println("agvArrived:"+message);
+//	}
+//	
+//	@JmsListener(destination="volumeDetect") //材積辨識
+//	public void readVolume(String message) {
+//		System.out.println("volumeDetect:"+message);
+//	}
+//	
+//	@JmsListener(destination="IrReceive")
+//	public void readIRMessage(String message) {
+//		System.out.println("IRStatus:"+message);
+//		tallyService.irStatus = true;
+//	}
+//	
+//	@JmsListener(destination="ArmStatus")
+//	public void readArmMessage(String message) {
+//		System.out.println("ArmStatus:"+message);
+//
+//	}
+//	
+//	@JmsListener(destination="ArmFinish")
+//	public void readArmFinishMessage(String message) {
+//		System.out.println("ArmFinish:"+message);
+//	}
 	
-	@JmsListener(destination="capsClick", containerFactory="queueListener")
-	public void readCaps(String message) {
-		System.out.println("capsClick:"+message);
-	}
-	
-	@JmsListener(destination="agvArrived", containerFactory="queueListener")
-	public void readAgv(String message) {
-		System.out.println("agvArrived:"+message);
-	}
-	
-	@JmsListener(destination="volumeDetect", containerFactory="queueListener")
-	public void readVolume(String message) {
-		System.out.println("volumeDetect:"+message);
-		tallyService.irStatus = true;
-	}
-	
-	@JmsListener(destination="IrReceive", containerFactory="queueListener")
-	public void readIRMessage(String message) {
-		System.out.println("IRStatus:"+message);
-	}
-	
-	@JmsListener(destination="ArmStatus", containerFactory="queueListener")
-	public void readArmMessage(String message) {
-		System.out.println("ArmStatus:"+message);
-		tallyService.sendFinish();
-	}
 }

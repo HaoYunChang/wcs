@@ -1,14 +1,14 @@
-package com.wcs;
+package com.wcs.autoEx.config;
 
 import javax.jms.ConnectionFactory;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
+import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
-import org.springframework.jms.config.SimpleJmsListenerContainerFactory;
-import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
@@ -18,14 +18,6 @@ public class Mq {
 	@Autowired
     private Environment env;
 	
-    @Bean("queueListener")
-    public JmsListenerContainerFactory<?> queueJmsListenerContainerFactory(ConnectionFactory connectionFactory){
-        SimpleJmsListenerContainerFactory factory = new SimpleJmsListenerContainerFactory();
-        factory.setConnectionFactory(connectionFactory);
-        factory.setPubSubDomain(false);
-        return factory;
-    }
-    
 	@Bean
     public ConnectionFactory connectionFactory() {
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory();
@@ -35,17 +27,22 @@ public class Mq {
         return connectionFactory;
     }
 	
-	@Bean
-    public JmsTemplate genJmsTemplate() {
-        return new JmsTemplate(connectionFactory());
-
+    @Bean
+    public JmsListenerContainerFactory<?> jmsFactoryTopic(ConnectionFactory connectionFactory, 
+    		DefaultJmsListenerContainerFactoryConfigurer configurer) {
+        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+        configurer.configure(factory, connectionFactory);
+        factory.setPubSubDomain(true);
+        factory.setClientId("wcs");
+        factory.setSubscriptionDurable(true);
+        return factory;
     }
 
     @Bean
-    public JmsMessagingTemplate jmsMessageTemplate() {
-        return new JmsMessagingTemplate(connectionFactory());
+    public JmsTemplate jmsTemplateTopic() {
+        JmsTemplate jmsTemplate = new JmsTemplate(connectionFactory());
+        jmsTemplate.setPubSubDomain(true);
+        return jmsTemplate;
     }
-    
-    
-    
+
 }

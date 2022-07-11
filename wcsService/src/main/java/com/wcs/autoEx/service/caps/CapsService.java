@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.annotation.PostConstruct;
-
 import org.greenrobot.eventbus.Subscribe;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,12 +20,11 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 import org.springframework.stereotype.Service;
 import org.xmlpull.v1.XmlPullParserException;
-
 import com.atop.autoEx.cAPS.*;
 import com.atop.autoEx.IExceptionEvent;
 import com.atop.autoEx.IGoodEndEvent;
 import com.wcs.autoEx.AexServiceBase;
-//import jusda.autoEx.cAPS.CAPSDeviceController;
+
 
 @Service
 public class CapsService extends AexServiceBase {
@@ -44,7 +41,7 @@ private JSONArray seedsMapper = null;
 		//this.cAPSDevice = new CAPSDeviceController(this.eventBus);
 		//this.cAPSDevice.eventBusRegister();
 
-		String inputFileName = "aex_setting.json";
+		String inputFileName = "aex_setting_jsd.json";
 
 		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		InputStream inputStream = classloader.getResourceAsStream(inputFileName);
@@ -146,13 +143,9 @@ private JSONArray seedsMapper = null;
 	}
 	
 	public void onSeedCmd(ISeedCommand cmd) {
-		System.out.println("0");
 		reset(cmd.getPotAddress());
-		System.out.println("1");
 		setLight(cmd);
-		System.out.println("2");
 		setNum(cmd);
-		System.out.println("3");
 	}
 	
 	private void reset(String potId) {
@@ -168,7 +161,6 @@ private JSONArray seedsMapper = null;
 		    }
 		    count++;
 		}
-		System.out.println(closeLight);
 		sendColorToIIs(closeLight);
 	}
 	
@@ -242,18 +234,11 @@ private JSONArray seedsMapper = null;
                         i++;
                     }
                 }
-                //this.postColorIIS(multiLight)
-                //this.postColorIISSoap(multiLight)
                 sendColorToIIs(multiLight);
                 System.out.println("CPASController onLightChangeCmdDo bizAddress:" +cmd.getAddresses().get(0) +"hardAddress:$hardAddress color:"+cmd.getLightColor());
 
-//            正常且符合預期呼叫邏輯
-               // val goodEndEvent = GoodEndEvent(cmd)
-                //this._eventBus!!.post(goodEndEvent)
             } catch (Exception ex) {
                 ex.getStackTrace();
-            	//val exceptionEvent = ExceptionEvent(cmd, ex)
-                //this._eventBus!!.post(exceptionEvent)
             }
     }
         //正常且符合預期呼叫邏輯
@@ -300,16 +285,16 @@ private JSONArray seedsMapper = null;
 	
 	private void sendColorToIIs(String value) {
 		SoapObject request = new SoapObject("http://tempuri.org/", "SetToTagsColorOnWeb");
-        //request.addProperty("cmd", value);準時達用的
-		request.addProperty("command", value);//測試模擬器用的
+        request.addProperty("cmd", value);
+		//request.addProperty("command", value);//測試模擬器用的
 		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         envelope.setOutputSoapObject(request);
         envelope.dotNet = true;
-        HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
+        HttpTransportSE androidHttpTransport = new HttpTransportSE("http://192.168.100.13:8343/WarehouseControlService.asmx");
+        //HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
         try {
 			androidHttpTransport.call("http://tempuri.org/SetToTagsColorOnWeb", envelope);
 		} catch (IOException | XmlPullParserException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -331,14 +316,14 @@ private JSONArray seedsMapper = null;
     }
 	
 	private void sendTagToIIs(String value) {
-		System.out.println("value:"+value);
 		SoapObject request = new SoapObject("http://tempuri.org/", "SetToTagsOnWeb");
-        //request.addProperty("cmd", value);準時達用的
-		request.addProperty("command", value);//測試模擬器用的
+        request.addProperty("cmd", value);
+		//request.addProperty("command", value);//測試模擬器用的
 		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         envelope.setOutputSoapObject(request);
         envelope.dotNet = true;
-        HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
+        HttpTransportSE androidHttpTransport = new HttpTransportSE("http://192.168.100.13:8343/WarehouseControlService.asmx");
+        //HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
         try {
 			androidHttpTransport.call("http://tempuri.org/SetToTagsOnWeb", envelope);
 		} catch (IOException | XmlPullParserException e) {
@@ -350,7 +335,6 @@ private JSONArray seedsMapper = null;
 		try {
 			resultsRequestSOAP = envelope.getResponse().toString();
 		} catch (SoapFault e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

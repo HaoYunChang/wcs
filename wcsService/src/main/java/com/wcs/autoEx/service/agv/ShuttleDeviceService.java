@@ -1,15 +1,11 @@
 package com.wcs.autoEx.service.agv;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-import org.json.JSONObject;
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
@@ -17,16 +13,15 @@ import org.ksoap2.transport.HttpTransportSE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import com.atop.autoEx.INormalEndEvent;
 import com.atop.autoEx.IStateChangeEvent;
 import com.atop.autoEx.ITimeoutEvent;
 import com.atop.autoEx.shuttle.IGoCommand;
 import com.atop.autoEx.shuttle.IShuttleCommand;
-import com.atop.autoEx.shuttle.IShuttleDeviceController;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.atop.autoEx.shuttle.SettingAgvCommand;
 import com.wcs.autoEx.AexServiceBase;
+import com.wcs.dao.ActionLogService;
 import com.wcs.dao.LocationService;
 import com.wcs.mq.MqSender;
 
@@ -38,50 +33,16 @@ import lombok.extern.slf4j.Slf4j;
 @Scope("singleton")
 public class ShuttleDeviceService extends AexServiceBase {
 
-	private IShuttleDeviceController shuttleDevice = null;
-	private Map<String, IGoCommand> goCommandExecMap = new HashMap();
-	private Map<String, String> locationCarrierMap = new HashMap();
-	private String preShelfNum = null;
+	private Map<String, IGoCommand> goCommandExecMap = new HashMap<String, IGoCommand>();
 	
 	@Autowired 
 	LocationService locationService;
 	
 	@Autowired
+	ActionLogService actionLogService;
+	
+	@Autowired
 	MqSender mqSender;
-
-	@PostConstruct
-	@Override
-	public void init() {
-		super.init();
-		//this.shuttleDevice = new ShuttleDeviceController(this.eventBus);
-		//this.shuttleDevice.eventBusRegister();
-
-		String inputFileName = "aex_setting.json";
-
-		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-		InputStream inputStream = classloader.getResourceAsStream(inputFileName);
-
-		try (InputStreamReader isr = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
-				BufferedReader reader = new BufferedReader(isr)) {
-
-			StringBuilder resultStringBuilder = new StringBuilder();
-			String aexSetting;
-			while ((aexSetting = reader.readLine()) != null) {
-				resultStringBuilder.append(aexSetting).append("\n");
-			}
-
-			JSONObject dc_setting_obj = new JSONObject(resultStringBuilder.toString());
-			//this.shuttleDevice.deviceInit(dc_setting_obj);
-			//this.shuttleDevice.connection();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-//	public void asyncExeCmd(IShuttleCommand cmd) throws Exception {
-//		this.shuttleDevice.asyncExeCmd(cmd);
-//	}
 
 	@Subscribe
 	@Override
@@ -108,29 +69,83 @@ public class ShuttleDeviceService extends AexServiceBase {
 		}
 	}
 	
-	public void onGoCmd(IGoCommand cmd) {
-		Map<String, Object> storageInfo = new HashMap();
-		if (cmd.getSourceAddress().equals("CAP101"))
-			storageInfo = locationService.getLocation(cmd.getDestinationAddress());
-		else
-			storageInfo = locationService.getLocation(cmd.getSourceAddress());
-			
-		String carrierId = (String) storageInfo.get("shelf_num");
-		String direction = (String) storageInfo.get("direction");
-		String testLoc = (String) storageInfo.get("test_location");
-		cmd.setCarrier(carrierId);
-		this.goCommandExecMap.put(carrierId, cmd);
-		String command = cmd.getDestinationAddress().equals("CAP101")? "O" : "I";
+	public String onGoCmd(IGoCommand cmd) {
+		Map<String, Object> storageInfo = new HashMap<String, Object>();
+		Map<String, Object> capsInfo = new HashMap<String, Object>();
 		String result="";
-		if (cmd.getDestinationAddress().equals("CAP101")) {
-			//String result = sendRequestToIIs("set_carrier_next_location", List.of(cmd.getId().toString(), cmd.getDestinationAddress(), cmd.getCarrier(), direction, command));
-			result = test("set_carrier_next_location", List.of(cmd.getDestinationAddress(), cmd.getCarrier(), "false"));
-		} else {
-			//String result = sendRequestToIIs("set_carrier_next_location", List.of(cmd.getId().toString(), cmd.getDestinationAddress(), cmd.getCarrier(), direction, command));
-			result = test("set_carrier_next_location", List.of(testLoc, cmd.getCarrier(), "false"));
+		try {
+			capsInfo = locationService.getLocation("CAP101");
+			if (cmd.getSourceAddress().equals("CAP101")) {
+				storageInfo = locationService.getLocation(cmd.getDestinationAddress());
+				if (!storageInfo.get("shelf_num").equals(capsInfo.get("shelf_num"))) {
+					return "010,回去的儲位與貨架編號不符";
+				}
+			} else
+				storageInfo = locationService.getLocation(cmd.getSourceAddress());
+			
+			
+			String carrierId = (String) storageInfo.get("shelf_num");
+			String direction = (String) storageInfo.get("direction");
+			String testLoc = (String) storageInfo.get("test_location");
+			String shelfLocation = (String) storageInfo.get("shelf_location");
+			cmd.setCarrier(carrierId);
+			this.goCommandExecMap.put(carrierId, cmd);
+			String command = cmd.getDestinationAddress().equals("CAP101")? "O" : "I";
+			if (command == "O") {
+				if (cmd.getSourceAddress().equals("CAP101")) {
+					command = "T";
+					direction = direction.equals("A")? "B" : "A";
+				}	
+			}	
+			
+			if (cmd.getDestinationAddress().equals("CAP101")) {
+				result = sendRequestToIIs("set_carrier_next_location", List.of(cmd.getId().toString(), cmd.getDestinationAddress(), cmd.getCarrier(), direction, command));
+				//result = test("set_carrier_next_location", List.of(cmd.getDestinationAddress(), cmd.getCarrier(), "false"));
+			} else {
+				result = sendRequestToIIs("set_carrier_next_location", List.of(cmd.getId().toString(), shelfLocation, cmd.getCarrier(), direction, command));
+				//result = test("set_carrier_next_location", List.of(testLoc, cmd.getCarrier(), "false"));
+			}
+			//mqSender.sendTopic("agvArrived", result);
+			if (result.contains("000")) {
+				//新增action_log
+				int saveResult = actionLogService.save((String)storageInfo.get("storage_num"), cmd.getDestinationAddress(), command);
+				
+			}
+		}catch (Exception e) {
+			result = e.getLocalizedMessage();
 		}
-		System.out.println("result:"+result);
-		mqSender.sendTopic("agvArrived", result);
+		return result;
+	}
+	
+	public String onSetCmd(SettingAgvCommand sc) {
+		String result = "";
+		String tag = (String) sc.get_tag();
+		List<String> soapParameter = new ArrayList<String>();
+		switch (tag) {
+			case "get_equipment_status", "set_equipment_status": {
+				soapParameter = Arrays.asList(sc.getCarId());
+				break;
+			}
+			case "UpdateAvailableQty": {//number
+				soapParameter = Arrays.asList(sc.getCarId());
+				break;
+			}
+			case "ChangeChargingPower" : {
+				soapParameter = Arrays.asList(sc.getMin()+","+sc.getMax());
+				break;
+			}
+			case "get_carrier_store_location" : {
+				soapParameter = (!sc.getCarId().isBlank()) ? Arrays.asList(sc.getCarId()) : Arrays.asList("1");
+				break;
+			}
+			default: {
+				soapParameter = Arrays.asList("1");
+				break;
+			}
+		}
+		result = sendRequestToIIs(sc.get_tag().toString(), soapParameter);
+		
+		return result;
 	}
 	
 	private String test(String soapRequestData, List<String> arr) {
@@ -152,20 +167,21 @@ public class ShuttleDeviceService extends AexServiceBase {
             SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
             envelope.setOutputSoapObject(request);
             envelope.dotNet = true;
-            HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
+            HttpTransportSE androidHttpTransport = new HttpTransportSE("http://192.168.100.13:8343/WarehouseControlService.asmx");
+            //HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
             androidHttpTransport.call("http://tempuri.org/"+soapRequestData, envelope);
             String resultsRequestSOAP = envelope.getResponse().toString();
 
             switch (soapRequestData) {
             	case "set_carrier_next_location": {
                     result =  (resultsRequestSOAP.contains("000"))?
-                        "時間${getTime()} 物流箱:${arr[1]} 000,OK"
-                    : "時間${getTime()} 物流箱:${arr[1]} 回應失敗！錯誤碼："+resultsRequestSOAP;
+                    	resultsRequestSOAP
+                    : "回應失敗！錯誤碼："+resultsRequestSOAP;
                     break;
                 }
             	case "get_carrier_store_location": {
                     if (!resultsRequestSOAP.isEmpty()) {
-                        result = "000";
+                        result = resultsRequestSOAP;
                         System.out.println("getStoreLocation = "+resultsRequestSOAP);
                     } else {
                     	System.out.println("找不到儲位");
@@ -174,7 +190,7 @@ public class ShuttleDeviceService extends AexServiceBase {
                 }
                 default: {
                     if (resultsRequestSOAP.contains("000")) {
-                        result = "000,OK";
+                        result = resultsRequestSOAP;
                         System.out.println("result = "+resultsRequestSOAP);
                     } else {
                     	System.out.println("設定錯誤"+resultsRequestSOAP);
@@ -200,27 +216,29 @@ public class ShuttleDeviceService extends AexServiceBase {
                     request.addProperty("carrier_id", arr.get(2));
                     request.addProperty("direction", arr.get(3));
                     request.addProperty("command", arr.get(4));
+                    break;
                 }
             	default : {
-                    request.addProperty("Command", arr.get(0));
+                    request.addProperty("cmd", arr.get(0));
                 }
             }
             SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
             envelope.setOutputSoapObject(request);
             envelope.dotNet = true;
-            HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
+            //HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
+            HttpTransportSE androidHttpTransport = new HttpTransportSE("http://192.168.100.13:8343/WarehouseControlService.asmx");
             androidHttpTransport.call("http://tempuri.org/"+soapRequestData, envelope);
             String resultsRequestSOAP = envelope.getResponse().toString();
             
             switch (soapRequestData) {
             	case "set_carrier_next_location": {
                     result =  (resultsRequestSOAP.contains("000"))?
-                        "000,OK"
+                    	resultsRequestSOAP
                     : "回應失敗！錯誤碼："+resultsRequestSOAP;
                 }
             	case "get_carrier_store_location": {
                     if (!resultsRequestSOAP.isEmpty()) {
-                        result = "000";
+                        result = resultsRequestSOAP;
                         System.out.println("getStoreLocation = "+resultsRequestSOAP);
                     } else {
                     	System.out.println("找不到儲位");
@@ -228,7 +246,7 @@ public class ShuttleDeviceService extends AexServiceBase {
                 }
                 default: {
                     if (resultsRequestSOAP.contains("000")) {
-                        result = "000,OK";
+                        result = resultsRequestSOAP;
                         System.out.println("result = "+resultsRequestSOAP);
                     } else {
                     	System.out.println("設定錯誤"+resultsRequestSOAP);
@@ -236,7 +254,7 @@ public class ShuttleDeviceService extends AexServiceBase {
                 }
             }
         }catch(Exception e) {
-        	e.getMessage();
+        	result = e.getLocalizedMessage();
         }
         
         return result;

@@ -1,13 +1,5 @@
 package com.wcs.autoEx.service.barcodeReader;
 
-import javax.annotation.PostConstruct;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,30 +20,30 @@ public class IRService implements Runnable {
 	@Autowired
 	MqSender mqSender;
 	
-	@PostConstruct
-	private void init() {
-		String inputFileName = "aex_setting.json";
-		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-		InputStream inputStream = classloader.getResourceAsStream(inputFileName);
-
-		try {
-			InputStreamReader isr = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
-			BufferedReader reader = new BufferedReader(isr);
-
-			StringBuilder resultStringBuilder = new StringBuilder();
-			String aexSetting;
-			while ((aexSetting = reader.readLine()) != null) {
-//				System.out.println(aexSetting);
-				resultStringBuilder.append(aexSetting).append("\n");
-			}
-			
-			JSONObject dc_setting_obj = new JSONObject(resultStringBuilder.toString());
-			
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	@PostConstruct
+//	private void init() {
+//		String inputFileName = "aex_setting.json";
+//		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+//		InputStream inputStream = classloader.getResourceAsStream(inputFileName);
+//
+//		try {
+//			InputStreamReader isr = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+//			BufferedReader reader = new BufferedReader(isr);
+//
+//			StringBuilder resultStringBuilder = new StringBuilder();
+//			String aexSetting;
+//			while ((aexSetting = reader.readLine()) != null) {
+////				System.out.println(aexSetting);
+//				resultStringBuilder.append(aexSetting).append("\n");
+//			}
+//			
+//			JSONObject dc_setting_obj = new JSONObject(resultStringBuilder.toString());
+//			
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	@Override
 	public void run() {
