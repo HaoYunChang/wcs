@@ -1,7 +1,12 @@
 package com.wcs.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,68 +49,143 @@ public class ApiDeviceController {
 	WcsApplicationFrame wcsAppFrame;
 	
 	@GetMapping("/shuttle/{s}/{d}")
-	public String shuttleTrigger(@PathVariable String s, @PathVariable String d)
+	public Map<String, String> shuttleTrigger(@PathVariable String s, @PathVariable String d)
 			throws Exception {
 		IGoCommand goCmd = new GoCommand(s, d, "GO");
-		String result = shuttleDeviceService.onGoCmd(goCmd);
+		Map<String, String> result = shuttleDeviceService.onGoCmd(goCmd);
+		result.put("url", "http://192.168.100.102:9102/wcs_api/autoDevice/shuttle/"+s+"/"+d);
 		return result;
 	}
 	
+	@GetMapping("/shuttle/getCarStatus/")
+	public Map<String, Object> getAllAgvStatus() {
+		JSONArray idleArray = new JSONArray();
+		JSONArray operatingArray = new JSONArray();
+		JSONObject json = new JSONObject();
+		
+		//測試用
+//		int random = (int)(Math.random() * 4);
+//		Map<String, String> hash = new HashMap<String, String>();
+//		switch (random) {
+//			case 0:{
+//				for (int i=1;i<3;i++) {
+//					hash.put("carId", "22"+i);
+//					hash.put("status", "忙碌中");
+//					operatingArray.put(hash);
+//				}
+//				break;
+//			}
+//			case 1:{
+//				hash.put("carId", "221");
+//				hash.put("status", "閒置中");
+//				idleArray.put(hash);
+//				hash.clear();
+//				hash.put("carId", "222");
+//				hash.put("status", "忙碌中");
+//				operatingArray.put(hash);
+//				hash.clear();
+//				break;
+//			}
+//			case 2:{
+//				hash.put("carId", "222");
+//				hash.put("status", "閒置中");
+//				idleArray.put(hash);
+//				hash.clear();
+//				hash.put("carId", "221");
+//				hash.put("status", "忙碌中");
+//				operatingArray.put(hash);
+//				hash.clear();
+//				break;
+//			}
+//			case 3:{
+//				for (int i=1;i<3;i++) {
+//					hash.put("carId", "22"+i);
+//					hash.put("status", "閒置中");
+//					idleArray.put(hash);
+//				}
+//				break;
+//			}
+//		}
+		
+		//現場用
+		for(int i=1;i<3;i++) {
+			Map<String, String> hash = new HashMap<String, String>();
+			SettingAgvCommand sac = new SettingAgvCommand("22"+i, 0, 0, "get_equipment_status");
+			String result = shuttleDeviceService.onSetCmd(sac).get("message").substring(4);
+			hash.put("carId", "22"+i);
+			hash.put("status", result);
+			if(result.equals("閒置中")) 
+				idleArray.put(hash);
+			else
+				operatingArray.put(hash);
+		}
+		json.put("idleCar", idleArray);
+		json.put("operatingCar", operatingArray);
+		return json.toMap();
+	}
+	
 	@GetMapping("/shuttle/getCarStatus/{carId}")
-	public String getAgvStatusTrigger(@PathVariable String carId) {
+	public Map<String, String> getAgvStatusTrigger(@PathVariable String carId) {
 		SettingAgvCommand sac = new SettingAgvCommand(carId, 0, 0, "get_equipment_status");
-		String result = shuttleDeviceService.onSetCmd(sac);
+		Map<String, String> result = shuttleDeviceService.onSetCmd(sac);
 		return result;
 	}
 	
 	@GetMapping("/shuttle/setAgvCharge/{carId}")
-	public String setAgvChargeTrigger(@PathVariable String carId) {
+	public Map<String, String> setAgvChargeTrigger(@PathVariable String carId) {
 		SettingAgvCommand sac = new SettingAgvCommand(carId, 0, 0, "set_equipment_status");
-		String result = shuttleDeviceService.onSetCmd(sac);
+		Map<String, String> result = shuttleDeviceService.onSetCmd(sac);
 		return result;
+//		return "OK";
 	}
 	
 	@GetMapping("/shuttle/setChargePower/{power}")
-	public String setChargePowerTrigger(@PathVariable String power) {
+	public Map<String, String> setChargePowerTrigger(@PathVariable String power) {
 		String[] powerList = power.split(",");
 		SettingAgvCommand sac = new SettingAgvCommand("", Integer.parseInt(powerList[0]),
 				Integer.parseInt(powerList[1]), "ChangeChargingPower");
-		String result = shuttleDeviceService.onSetCmd(sac);
+		Map<String, String> result = shuttleDeviceService.onSetCmd(sac);
 		return result;
+//		return "OK";
 	}
 	
 	@GetMapping("/shuttle/setAgvPark/")
-	public String setAgvParkTrigger() {
+	public Map<String, String> setAgvParkTrigger() {
 		SettingAgvCommand sac = new SettingAgvCommand("", 0, 0, "Parking");
-		String result = shuttleDeviceService.onSetCmd(sac);
+		Map<String, String> result = shuttleDeviceService.onSetCmd(sac);
 		return result;
+//		return "OK";
 	}
 	
 	@GetMapping("/shuttle/getStoreStatus/")
-	public String getStoreStatusTrigger() {
+	public Map<String, String> getStoreStatusTrigger() {
 		SettingAgvCommand sac = new SettingAgvCommand("", 0, 0, "get_carrier_store_location");
-		String result = shuttleDeviceService.onSetCmd(sac);
+		Map<String, String> result = shuttleDeviceService.onSetCmd(sac);
 		return result;
+//		return "OK";
 	}
 	
 	@GetMapping("/shuttle/getStoreStatus/{shelf_num}")
-	public String getStoreStatusSingleTrigger(@PathVariable String shelf_num) {
+	public Map<String, String> getStoreStatusSingleTrigger(@PathVariable String shelf_num) {
 		SettingAgvCommand sac = new SettingAgvCommand(shelf_num, 0, 0, "get_carrier_store_location");
-		String result = shuttleDeviceService.onSetCmd(sac);
+		Map<String, String> result = shuttleDeviceService.onSetCmd(sac);
 		return result;
+//		return "OK";
 	}
 	
 	@GetMapping("/shuttle/updAvailableQty/{num}")
-	public String updateAvailableQty(@PathVariable String num) {
+	public Map<String, String> updateAvailableQty(@PathVariable String num) {
 		SettingAgvCommand sac = new SettingAgvCommand(num, 0, 0, "UpdateAvailableQty");
-		String result = shuttleDeviceService.onSetCmd(sac);
+		Map<String, String> result = shuttleDeviceService.onSetCmd(sac);
 		return result;
 	}
 
     @GetMapping("/caps/seed/{address}/{color}/{num}")
     public String capsSeedTrigger(@PathVariable String address, @PathVariable String color, @PathVariable String num) throws Exception {
-//    	System.out.println("Caps "+address+"color "+color +" num "+ num + "Seeding");
     	String[] addrArr = address.split(",");
+    	for (int i=0; i<addrArr.length; i++) {
+    		addrArr[i] = String.format("%04d", Integer.valueOf(addrArr[i]));
+    	}
     	String[] numArr = num.split(",");
     	List<CAPSSeed> capsArr = new ArrayList<CAPSSeed>();
     	for (int i=0;i<addrArr.length;i++) {
@@ -132,6 +212,8 @@ public class ApiDeviceController {
     
     @PostMapping(value = "/outbound/package", consumes = "multipart/form-data")
     public String receivePackage(PackageBox packageBox) {
+    	if (packageBox.consignNumber.isBlank() || packageBox.orderId.isBlank())
+    		return "包裹無訂單邊號/託運單號";
     	packageBox.setPackageStatus("理貨完成");
     	tallyService.setPackageBox(packageBox);
     	wcsAppFrame.addPackage(packageBox);
@@ -145,7 +227,7 @@ public class ApiDeviceController {
     	pb.setOrderId(barcodeId);
     	pb.setPackageStatus("理貨完成");
     	tallyService.setPackageBox(pb);
-    	//wcsAppFrame.addPackage();
+    	wcsAppFrame.addPackage(pb);
     	return "orderId:"+barcodeId+"is received";
     }
     

@@ -12,8 +12,9 @@ public class FinishedPackageService {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
-	final String INSERT_QUERY = "insert into finished_package (order_id, consign_number, product_name, receiver, receiver_addr, sender, sender_addr, customer_id, memo, receive_date)"
-			+ " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	final String INSERT_QUERY = "insert into finished_package (order_id, consign_number, product_name, receiver, receiver_addr"
+			+ ", sender, sender_addr, customer_id, memo, receive_date, length, width, height, weight_g, cmb_unit)"
+			+ " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	
 	public Map<String,Object> getLocation(String locationId) {
 		String sql="SELECT * FROM location where storage_num = ?";
@@ -24,6 +25,7 @@ public class FinishedPackageService {
 	
 	public int save(PackageBox pb) {
 		return jdbcTemplate.update(INSERT_QUERY, pb.getOrderId(), pb.getConsignNumber(), pb.getProductName(), pb.receiver,
-				pb.getReceiverAddr(), pb.getSender(), pb.getSenderAddr(), pb.customerId, pb.memo, pb.getReceiveDate());
+				pb.getReceiverAddr(), pb.getSender(), pb.getSenderAddr(), pb.customerId, pb.memo, pb.getReceiveDate(),
+				pb.l_length, pb.w_length, pb.h_length, pb.weight_g, pb.cmb_unit);
 	}
 }

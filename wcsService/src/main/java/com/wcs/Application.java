@@ -47,7 +47,7 @@ public class Application extends JFrame implements CommandLineRunner{
 				try {
 					frame = new WcsApplicationFrame();
 					frame.setVisible(true);		
-					Timer t = new Timer(1000, new ActionListener() {
+					Timer t = new Timer(100, new ActionListener() {
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							frame.doShow();

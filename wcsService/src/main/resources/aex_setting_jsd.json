@@ -3772,6 +3772,76 @@
                             "bizAddress": "0016",
                             "hardAddress": "101,16",
                             "desc": "二樓CAPS理貨站-101站-密林16"
+                        }, {
+                            "id": "17",
+                            "bizAddress": "0017",
+                            "hardAddress": "101,17",
+                            "desc": "二樓CAPS理貨站-101站-密林17"
+                        }, {
+                            "id": "18",
+                            "bizAddress": "0018",
+                            "hardAddress": "101,18",
+                            "desc": "二樓CAPS理貨站-101站-密林18"
+                        }, {
+                            "id": "19",
+                            "bizAddress": "0019",
+                            "hardAddress": "101,19",
+                            "desc": "二樓CAPS理貨站-101站-密林19"
+                        }, {
+                            "id": "20",
+                            "bizAddress": "0020",
+                            "hardAddress": "101,20",
+                            "desc": "二樓CAPS理貨站-101站-密林20"
+                        }, {
+                            "id": "21",
+                            "bizAddress": "0021",
+                            "hardAddress": "101,21",
+                            "desc": "二樓CAPS理貨站-101站-密林21"
+                        }, {
+                            "id": "22",
+                            "bizAddress": "0022",
+                            "hardAddress": "101,22",
+                            "desc": "二樓CAPS理貨站-101站-密林22"
+                        }, {
+                            "id": "23",
+                            "bizAddress": "0023",
+                            "hardAddress": "101,23",
+                            "desc": "二樓CAPS理貨站-101站-密林23"
+                        }, {
+                            "id": "24",
+                            "bizAddress": "0024",
+                            "hardAddress": "101,24",
+                            "desc": "二樓CAPS理貨站-101站-密林24"
+                        }, {
+                            "id": "25",
+                            "bizAddress": "0025",
+                            "hardAddress": "101,25",
+                            "desc": "二樓CAPS理貨站-101站-密林25"
+                        }, {
+                            "id": "26",
+                            "bizAddress": "0026",
+                            "hardAddress": "101,26",
+                            "desc": "二樓CAPS理貨站-101站-密林26"
+                        }, {
+                            "id": "27",
+                            "bizAddress": "0027",
+                            "hardAddress": "101,27",
+                            "desc": "二樓CAPS理貨站-101站-密林27"
+                        }, {
+                            "id": "28",
+                            "bizAddress": "0028",
+                            "hardAddress": "101,28",
+                            "desc": "二樓CAPS理貨站-101站-密林28"
+                        }, {
+                            "id": "29",
+                            "bizAddress": "0029",
+                            "hardAddress": "101,29",
+                            "desc": "二樓CAPS理貨站-101站-密林29"
+                        }, {
+                            "id": "30",
+                            "bizAddress": "0030",
+                            "hardAddress": "101,30",
+                            "desc": "二樓CAPS理貨站-101站-密林30"
                         }
                     ]
                 }, {

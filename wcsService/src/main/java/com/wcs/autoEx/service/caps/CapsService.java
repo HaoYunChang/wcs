@@ -28,20 +28,18 @@ import com.wcs.autoEx.AexServiceBase;
 
 @Service
 public class CapsService extends AexServiceBase {
-private ICAPSDeviceController cAPSDevice = null;
 private List<Map<String, Object>> results = new ArrayList<Map<String, Object>>();
-private String iisUrl = null;
 private JSONArray capsMapper = null;
 private JSONArray seedsMapper = null;
+//private String path = "http://10.248.82.110:8090/DepotWeb.asmx";
+private String path = "http://192.168.100.13:8343/WarehouseControlService.asmx";
 
 	@PostConstruct
 	@Override
 	public void init() {
 		super.init();
-		//this.cAPSDevice = new CAPSDeviceController(this.eventBus);
-		//this.cAPSDevice.eventBusRegister();
-
 		String inputFileName = "aex_setting_jsd.json";
+//		String inputFileName = "aex_setting.json";
 
 		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		InputStream inputStream = classloader.getResourceAsStream(inputFileName);
@@ -53,7 +51,6 @@ private JSONArray seedsMapper = null;
 			StringBuilder resultStringBuilder = new StringBuilder();
 			String aexSettingStr;
 			while ((aexSettingStr = reader.readLine()) != null) {
-//				System.out.println(aexSetting);
 				resultStringBuilder.append(aexSettingStr).append("\n");
 			}
 			
@@ -65,7 +62,6 @@ private JSONArray seedsMapper = null;
 	                if (capsSetting != null) {
 	                    String iisAddress = capsSetting.getString("iis_url");
 	                    if (iisAddress != null) {
-	                    	this.iisUrl = iisAddress;
 	                        JSONArray capsPotsSetting = capsSetting.getJSONArray("caps_pots");
 	                        if (capsPotsSetting != null) {
 	                            this.capsMapper = capsPotsSetting;
@@ -90,8 +86,6 @@ private JSONArray seedsMapper = null;
 	                }
 	            }
 	        }
-			//this.cAPSDevice.deviceInit(dc_setting_obj);
-			//this.cAPSDevice.connection();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -99,16 +93,10 @@ private JSONArray seedsMapper = null;
 
 	}
 
-//	public void asyncExeCmd(ICAPSCommand cmd) throws Exception {
-//		this.cAPSDevice.asyncExeCmd(cmd);
-//	}
-
 	@Subscribe
 	public void onButtonClickEvent(ICAPSButtonClickEvent event) throws Exception {
 		System.out.println(
 				"CAPSService onButtonClickEvent potAddress: " + event.getPotAddress() + " seedAddress: " + event.getSeedAddress());
-		/* 計算取得caps次數 */
-		//pickingAutoService.capsCounting(event.getPotAddress(), Integer.valueOf(event.getSeedAddress()));
 	}
 
 	@Override
@@ -121,7 +109,6 @@ private JSONArray seedsMapper = null;
 		}
 	}
 
-	// AEX or 底層原生機器驅動程式等發生不名的錯誤
 	@Override
 	@Subscribe
 	public void onCommandException(IExceptionEvent event) {
@@ -201,97 +188,82 @@ private JSONArray seedsMapper = null;
     }
     
     public void onLightChangeCmdDo(ILightChangeCmd cmd) { //AEX Team 需寫Device 底層協定
-            try {
-                String hardAddress = cmd.getAddresses().get(0);
-                String value = "0";
-                String multiLight = "";
-                String light = cmd.getLightColor().toString();
-                String green = "GREEN";
-                String red= "RED";
+    	try {
+	        String value = "0";
+	        String multiLight = "";
+	        String light = cmd.getLightColor().toString();
+	        String green = "GREEN";
+        	String red= "RED";
 
-                if (cmd.getAddresses().size() < 2) {
-                    if (light.equals(green)) {
-                        value = "CAP" + cmd.getAddresses().get(0) + ",2";
-                        multiLight = value;
-                    } else if (light.equals(red)) {
-                        value = "CAP" + cmd.getAddresses().get(0) + ",1";
-                        multiLight = value;
-                    }
-                } else {
-                    int i = 0;
-                    while (i < cmd.getAddresses().size()) {
-                        if (light.equals(green)) {
-                            value = "CAP" + cmd.getAddresses().get(i) + ",2";
-                        } else if (light.equals(red)) {
-                            value = "CAP" + cmd.getAddresses().get(i) + ",1";
-                        }
-                        if(i>0){
-                            multiLight += "|||$value";
-                        }
-                        else{
-                            multiLight = value;
-                        }
-                        i++;
-                    }
+            if (cmd.getAddresses().size() < 2) {
+            	if (light.equals(green)) {
+            		value = "CAP" + cmd.getAddresses().get(0) + ",2";
+                    multiLight = value;
+                } else if (light.equals(red)) {
+                    value = "CAP" + cmd.getAddresses().get(0) + ",1";
+                    multiLight = value;
                 }
-                sendColorToIIs(multiLight);
-                System.out.println("CPASController onLightChangeCmdDo bizAddress:" +cmd.getAddresses().get(0) +"hardAddress:$hardAddress color:"+cmd.getLightColor());
-
-            } catch (Exception ex) {
-                ex.getStackTrace();
+            } else {
+                int i = 0;
+                while (i < cmd.getAddresses().size()) {
+                    if (light.equals(green)) {
+                        value = "CAP" + cmd.getAddresses().get(i) + ",2";
+                    } else if (light.equals(red)) {
+                        value = "CAP" + cmd.getAddresses().get(i) + ",1";
+                    }
+                    if(i>0)
+                        multiLight += "|||$value";
+                    else 
+                        multiLight = value;
+                    
+                    i++;
+                }
             }
+            sendColorToIIs(multiLight);
+            System.out.println("CPASController onLightChangeCmdDo bizAddress:" +cmd.getAddresses().get(0) +"hardAddress:$hardAddress color:"+cmd.getLightColor());
+        } catch (Exception ex) {
+            ex.getStackTrace();
+        }
     }
-        //正常且符合預期呼叫邏輯
 
     public void onNumDisplaySetCmdDo(INumDisplaySetCmd cmd) {
-            try {
-                String hardAddress = cmd.getAddresses().get(0);
-                String value = "";
-                String multiLight = "";
-                String num = Integer.toString(cmd.getNum());
+        try {
+            String value = "";
+            String multiLight = "";
+            String num = Integer.toString(cmd.getNum());
 
-                if (cmd.getAddresses().size() < 2) {
-                    value = "CAP" + cmd.getAddresses().get(0) + ","+ num;
-                    multiLight = value;
-                } else {
-                    int i = 0;
-                    while (i < cmd.getAddresses().size()) {
-                        value = "CAP" + cmd.getAddresses().get(i)  + ","+ num;
-                        if(i>0){
-                            multiLight += "|||$value";
-                        }
-                        else{
-                            multiLight = value;
-                        }
-                        i++;
-                    }
+            if (cmd.getAddresses().size() < 2) {
+                value = "CAP" + cmd.getAddresses().get(0) + ","+ num;
+                multiLight = value;
+            } else {
+                int i = 0;
+                while (i < cmd.getAddresses().size()) {
+                    value = "CAP" + cmd.getAddresses().get(i)  + ","+ num;
+                    if(i>0)
+                        multiLight += "|||$value";
+                    else
+                        multiLight = value;
+                        
+                    i++;
                 }
-                if (multiLight != null) {
-                    //this.postNumIIS(multiLight)
-                    //this.postNumIISSoap(multiLight)
-                    sendTagToIIs(multiLight);
-                }
-                System.out.println("CAPSDeviceController numChangeCmdDo bizAddress:"+cmd.getAddresses().get(0)+ " hardAddress:$hardAddress num:"+cmd.getNum());
-
-//            正常且符合預期呼叫邏輯
-//                val goodEndEvent = GoodEndEvent(cmd)
-//                this._eventBus!!.post(goodEndEvent)
-            } catch (Exception ex) {
-            	ex.getStackTrace();
-//                val exceptionEvent = ExceptionEvent(cmd, ex)
-//                this._eventBus!!.post(exceptionEvent)
             }
+            if (multiLight != null) {
+                sendTagToIIs(multiLight);
+            }
+            System.out.println("CAPSDeviceController numChangeCmdDo bizAddress:"+cmd.getAddresses().get(0)+ " hardAddress:$hardAddress num:"+cmd.getNum());
+        } catch (Exception ex) {
+        	ex.getStackTrace();
         }
+    }
 	
 	private void sendColorToIIs(String value) {
 		SoapObject request = new SoapObject("http://tempuri.org/", "SetToTagsColorOnWeb");
         request.addProperty("cmd", value);
-		//request.addProperty("command", value);//測試模擬器用的
+//		request.addProperty("command", value);//測試模擬器用的
 		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         envelope.setOutputSoapObject(request);
         envelope.dotNet = true;
-        HttpTransportSE androidHttpTransport = new HttpTransportSE("http://192.168.100.13:8343/WarehouseControlService.asmx");
-        //HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
+        HttpTransportSE androidHttpTransport = new HttpTransportSE(path);
         try {
 			androidHttpTransport.call("http://tempuri.org/SetToTagsColorOnWeb", envelope);
 		} catch (IOException | XmlPullParserException e) {
@@ -318,16 +290,14 @@ private JSONArray seedsMapper = null;
 	private void sendTagToIIs(String value) {
 		SoapObject request = new SoapObject("http://tempuri.org/", "SetToTagsOnWeb");
         request.addProperty("cmd", value);
-		//request.addProperty("command", value);//測試模擬器用的
+//		request.addProperty("command", value);//測試模擬器用的
 		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
         envelope.setOutputSoapObject(request);
         envelope.dotNet = true;
-        HttpTransportSE androidHttpTransport = new HttpTransportSE("http://192.168.100.13:8343/WarehouseControlService.asmx");
-        //HttpTransportSE androidHttpTransport = new HttpTransportSE("http://10.248.82.110:8090/DepotWeb.asmx");
+        HttpTransportSE androidHttpTransport = new HttpTransportSE(path);
         try {
 			androidHttpTransport.call("http://tempuri.org/SetToTagsOnWeb", envelope);
 		} catch (IOException | XmlPullParserException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

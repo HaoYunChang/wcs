@@ -16,7 +16,10 @@ import javax.swing.border.EmptyBorder;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
+import com.wcs.autoEx.ErrorMessage;
 import com.wcs.autoEx.PackageBox;
+import com.wcs.autoEx.PackageStatus;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -28,13 +31,11 @@ import javax.swing.border.LineBorder;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.ListSelectionModel;
-import javax.swing.JTextField;
+import javax.swing.JTextArea;
 
 @Component
 public class WcsApplicationFrame extends JFrame {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private final OkHttpClient httpClient = new OkHttpClient();
 	private JPanel contentPane;
@@ -58,6 +59,7 @@ public class WcsApplicationFrame extends JFrame {
 	private static Boolean volumeStatus = false;
 	private static Boolean labelStatus = false;
 	private static Boolean armStatus = false;
+	private static Boolean packageError = false;
 	public static Boolean tallyArmStatus = false;
 	public static Boolean armConnection = false;
 	private JScrollPane workingScrollPane;
@@ -65,12 +67,10 @@ public class WcsApplicationFrame extends JFrame {
 	private JLabel pendingWorkLabel;
 	private JPanel pendingWorkPanel;
 	private JScrollPane pendingWorkScrollPane;
-	private JTextField armErrorText;
+	private JTextArea armErrorText;
+	private JTextArea labelErrorText;
 	private static Map<String, String> errorMap = new HashMap<String, String>();
-	private JTextField labelErrorText;
-	/**
-	 * Create the frame.
-	 */
+	
 	public WcsApplicationFrame() {
 		setForeground(Color.LIGHT_GRAY);
 		setTitle("流道狀態介面");
@@ -85,6 +85,21 @@ public class WcsApplicationFrame extends JFrame {
 		
 		try {
 			BufferedImage background = ImageIO.read(this.getClass().getClassLoader().getResource("background.png"));
+			
+			labelErrorText = new JTextArea();
+			labelErrorText.setEditable(false);
+			labelErrorText.setFont(new Font("標楷體", Font.PLAIN, 22));
+			labelErrorText.setForeground(Color.RED);
+			labelErrorText.setBounds(307, 29, 218, 94);
+			contentPane.add(labelErrorText);
+			
+			armErrorText = new JTextArea();
+			armErrorText.setForeground(Color.RED);
+			armErrorText.setFont(new Font("標楷體", Font.PLAIN, 22));
+			armErrorText.setBounds(49, 44, 213, 94);
+			armErrorText.setColumns(30);
+			armErrorText.setEditable(false);
+			contentPane.add(armErrorText);
 			armPanel = new JPanel();
 			armPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
 			armPanel.setBounds(75, 452, 120, 35);
@@ -237,22 +252,7 @@ public class WcsApplicationFrame extends JFrame {
 			pendingWorkPanel.add(pendingWorkLabel);
 			pendingWorkLabel.setBackground(Color.WHITE);
 			pendingWorkLabel.setFont(new Font("標楷體", Font.BOLD, 28));
-			
-			armErrorText = new JTextField();
-			armErrorText.setForeground(Color.RED);
-			armErrorText.setFont(new Font("標楷體", Font.PLAIN, 22));
-			armErrorText.setBounds(28, 24, 213, 94);
-			contentPane.add(armErrorText);
-			armErrorText.setColumns(30);
-			armErrorText.setEditable(false);
-			
-			labelErrorText = new JTextField();
-			labelErrorText.setEditable(false);
-			labelErrorText.setFont(new Font("標楷體", Font.PLAIN, 22));
-			labelErrorText.setForeground(Color.RED);
-			labelErrorText.setBounds(309, 24, 218, 94);
-			contentPane.add(labelErrorText);
-			labelErrorText.setColumns(30);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -260,9 +260,13 @@ public class WcsApplicationFrame extends JFrame {
 	
 	public void doShow() {
 		checkError();
+		if (packageError) {
+			refreshDataModel(workingTable, "working");
+			packageError = false;
+		}
 		if (tallyArmStatus &&  workingList.size() > 0 && workingList.size() > doneCount) {
-			if (workingList.get(doneCount).packageStatus.equals("手臂作業中")) {
-				workingList.get(doneCount).packageStatus = "完成出貨";
+			if (workingList.get(doneCount).packageStatus.equals(PackageStatus.ARM_OPERATING.value())) {
+				workingList.get(doneCount).packageStatus = PackageStatus.FINISH_SHIPMENT.value();
 				refreshDataModel(workingTable, "working");
 				doneCount++;
 			}
@@ -323,7 +327,7 @@ public class WcsApplicationFrame extends JFrame {
 				pb.cmb_g = jsonArr.getJSONObject(i).getFloat("cmb_g");
 				pb.cmb_unit = jsonArr.getJSONObject(i).getFloat("cmb_unit");
 			}
-			pb.packageStatus = "完成材積量測";
+			pb.packageStatus = PackageStatus.FINISH_VOLUME_DETECT.value();
 		}
 		else {
 			pb.h_length = (float) 0;	//height
@@ -333,7 +337,7 @@ public class WcsApplicationFrame extends JFrame {
 			pb.weight_kg = (float) 0;
 			pb.cmb_g = (float) 0;
 			pb.cmb_unit = (float) 0;
-			pb.packageStatus = "材積設備回傳失敗";
+			pb.packageStatus = PackageStatus.FAIL_VOLUME_DETECT.value();
 		}
 		workingList.add(pb);
 		pendingWorkList.remove(0);
@@ -342,15 +346,27 @@ public class WcsApplicationFrame extends JFrame {
 	}
 
 	public void setLabel() {
-		if (workingList.get(cv3).packageStatus.equals("完成材積量測"))
-			workingList.get(cv3).packageStatus = "貼標作業中";
+		if (workingList.get(cv3).packageStatus.equals(PackageStatus.FINISH_VOLUME_DETECT.value()))
+			workingList.get(cv3).packageStatus = PackageStatus.LABEL_OPERATING.value();
 		cv3++;
 		labelStatus = true;
 	}
 	
+	public void setPackageError() {
+		if (workingList.get(cv3-1).packageStatus.equals(PackageStatus.LABEL_OPERATING.value())) {
+			workingList.get(cv3-1).packageStatus = PackageStatus.PACKAGE_ERROR.value();
+			cv4++;
+		}
+		System.out.println(cv4-1);
+		if (workingList.get(cv4-1).packageStatus.equals(PackageStatus.ARM_OPERATING.value()))
+			workingList.get(cv4-1).packageStatus = PackageStatus.PACKAGE_ERROR.value();
+		doneCount++;
+		packageError = true;
+	}
+	
 	public void setArm() {
-		if (workingList.get(cv4).packageStatus.equals("貼標作業中"))
-			workingList.get(cv4).packageStatus = "手臂作業中";
+		if (workingList.get(cv4).packageStatus.equals(PackageStatus.LABEL_OPERATING.value()))
+			workingList.get(cv4).packageStatus = PackageStatus.ARM_OPERATING.value();
 		cv4++;
 		armStatus = true;
 	}
@@ -362,7 +378,7 @@ public class WcsApplicationFrame extends JFrame {
 		labelErrorText.setText("");
 		if (!armConnection) {
 			armPanel.setBackground(Color.ORANGE);
-			armErrorText.setText("手臂未連線");
+			armErrorText.setText(ErrorMessage.ARM_CONNECTION_ERROR.value());
 		} else {
 			armPanel.setBackground(Color.GREEN);
 			armErrorText.setText("");

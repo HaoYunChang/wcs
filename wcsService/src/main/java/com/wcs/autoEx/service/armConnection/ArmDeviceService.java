@@ -12,8 +12,12 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wcs.autoEx.ErrorMessage;
+import com.wcs.autoEx.PackageBox;
 import com.wcs.autoEx.service.tally.TallyService;
+import com.wcs.dao.FinishedPackageService;
 import com.wcs.frame.WcsApplicationFrame;
+import com.wcs.mq.MqSender;
 
 @Service
 public class ArmDeviceService implements Runnable {
@@ -22,6 +26,12 @@ public class ArmDeviceService implements Runnable {
 	
 	@Autowired
 	WcsApplicationFrame wcsAppFrame;
+	
+	@Autowired
+	MqSender mqSender;
+	
+	@Autowired
+	FinishedPackageService finishedPackageService;
 	
 	private Socket s = null;
 	
@@ -38,15 +48,13 @@ public class ArmDeviceService implements Runnable {
 		try {
 			while (true) {
 				try {
-					//s = new Socket("10.10.0.56", 5566);
 					s = new Socket("127.0.0.1", 5566);
 					if (s != null)
 						break;
 				}catch(ConnectException e) {
 					e.getLocalizedMessage();
-					tallyService.armStatus = false;
-					wcsAppFrame.armConnection = false;
-					System.out.println("連不到手臂");
+					TallyService.armStatus = false;
+					WcsApplicationFrame.armConnection = false;
 					Thread.sleep(1000);
 				}
 			}
@@ -60,21 +68,26 @@ public class ArmDeviceService implements Runnable {
 					String res = new String(temp, 0, bytesRead, "ASCII");
 					System.out.println("伺服器：" + res);
 					if (res.contains("Ready")) {		
-						Thread.sleep(5000);
-						tallyService.armStatus = true;
-						wcsAppFrame.tallyArmStatus = true;
-						wcsAppFrame.setError("arm", res, "fix");
+						TallyService.armStatus = true;
+						WcsApplicationFrame.tallyArmStatus = true;
+						wcsAppFrame.setError("arm", "", "fix");
+						if (TallyService.packageBox != null) {
+							finishedPackageService.save(TallyService.packageBox);
+							sendResultToWMS(true);
+						}
 					} else {
-						wcsAppFrame.tallyArmStatus = false;
-						wcsAppFrame.setError("arm", res, "set");
+						WcsApplicationFrame.tallyArmStatus = false;
+						if (TallyService.packageBox != null) {
+							wcsAppFrame.setError("arm", ErrorMessage.ARM_ERROR.value(), "set");
+							wcsAppFrame.setPackageError();
+							sendResultToWMS(false);
+						}
 					}
 				}
 			} catch (SocketException e) {
 				e.printStackTrace();
-				armConnection();
 			} catch (Exception ex) {
-				ex.printStackTrace();
-				armConnection();
+				System.out.println(ex.getLocalizedMessage());
 			}
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
@@ -94,5 +107,22 @@ public class ArmDeviceService implements Runnable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void sendResultToWMS(Boolean status) {
+		JSONObject json = new JSONObject();
+		json.put("id", TallyService.packageBox.id);
+		json.put("orderId", TallyService.packageBox.orderId);
+		json.put("consign_number", TallyService.packageBox.consignNumber);
+		if (status) {
+			json.put("status", "success");
+			json.put("message", "成功");
+		} else {
+			json.put("status", "fail");
+			json.put("message", "手臂異常");
+		}
+		mqSender.sendTopic("ArmFinish", json.toString());
+		json.clear();
+		TallyService.packageBox = null;	
 	}
 }
