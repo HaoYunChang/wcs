@@ -1,6 +1,9 @@
 package com.wcs.dao;
 
 import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -11,6 +14,10 @@ public class LocationService {
 	JdbcTemplate jdbcTemplate;
 	final String UPDATE_QUERY = "update location set shelf_num=?, direction=? where storage_num = 'CAP101'";
 	
+	@PostConstruct
+	public void init() {
+		jdbcTemplate.update(UPDATE_QUERY, "", "");
+	}
 	
 	public Map<String,Object> getLocation(String locationId) {
 		String sql="SELECT * FROM location where storage_num = ?";

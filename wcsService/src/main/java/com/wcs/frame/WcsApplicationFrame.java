@@ -264,12 +264,8 @@ public class WcsApplicationFrame extends JFrame {
 			refreshDataModel(workingTable, "working");
 			packageError = false;
 		}
-		if (tallyArmStatus &&  workingList.size() > 0 && workingList.size() > doneCount) {
-			if (workingList.get(doneCount).packageStatus.equals(PackageStatus.ARM_OPERATING.value())) {
-				workingList.get(doneCount).packageStatus = PackageStatus.FINISH_SHIPMENT.value();
-				refreshDataModel(workingTable, "working");
-				doneCount++;
-			}
+		if (tallyArmStatus && workingList.size() > 0 && workingList.size() >= doneCount) {
+			refreshDataModel(workingTable, "working");
 		}
 		if (armStatus) {
 			refreshDataModel(workingTable, "working");
@@ -352,14 +348,18 @@ public class WcsApplicationFrame extends JFrame {
 		labelStatus = true;
 	}
 	
-	public void setPackageError() {
-		if (workingList.get(cv3-1).packageStatus.equals(PackageStatus.LABEL_OPERATING.value())) {
-			workingList.get(cv3-1).packageStatus = PackageStatus.PACKAGE_ERROR.value();
-			cv4++;
+	public void setPackageError(String type) {
+		if (type.equals("label")) {
+			if (workingList.get(cv3-1).packageStatus.equals(PackageStatus.LABEL_OPERATING.value())) {
+				workingList.get(cv3-1).packageStatus = PackageStatus.PACKAGE_ERROR.value();
+				cv4++;
+			}
 		}
-		System.out.println(cv4-1);
-		if (workingList.get(cv4-1).packageStatus.equals(PackageStatus.ARM_OPERATING.value()))
-			workingList.get(cv4-1).packageStatus = PackageStatus.PACKAGE_ERROR.value();
+		if (type.equals("arm")) {
+			if (workingList.get(cv4-1).packageStatus.equals(PackageStatus.ARM_OPERATING.value())) {
+				workingList.get(cv4-1).packageStatus = PackageStatus.PACKAGE_ERROR.value();
+			}
+		}
 		doneCount++;
 		packageError = true;
 	}
@@ -369,6 +369,13 @@ public class WcsApplicationFrame extends JFrame {
 			workingList.get(cv4).packageStatus = PackageStatus.ARM_OPERATING.value();
 		cv4++;
 		armStatus = true;
+	}
+	
+	public void setFinish() {
+		if (workingList.get(doneCount).packageStatus.equals(PackageStatus.ARM_OPERATING.value())) {
+			workingList.get(doneCount).packageStatus = PackageStatus.FINISH_SHIPMENT.value();
+			doneCount++;
+		}
 	}
 	
 	private void checkError() {

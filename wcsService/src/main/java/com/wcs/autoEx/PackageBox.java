@@ -9,7 +9,6 @@ import lombok.Setter;
 @Getter
 @Component
 public class PackageBox extends PackageSize{
-	public Long id;
 	public String orderId="";
 	public String transporter="";
 	public String consignNumber="";

@@ -1,10 +1,13 @@
 package com.wcs.dao;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-
 import com.wcs.autoEx.PackageBox;
 
 @Service
@@ -24,8 +27,14 @@ public class FinishedPackageService {
 	}
 	
 	public int save(PackageBox pb) {
-		return jdbcTemplate.update(INSERT_QUERY, pb.getOrderId(), pb.getConsignNumber(), pb.getProductName(), pb.receiver,
-				pb.getReceiverAddr(), pb.getSender(), pb.getSenderAddr(), pb.customerId, pb.memo, pb.getReceiveDate(),
-				pb.l_length, pb.w_length, pb.h_length, pb.weight_g, pb.cmb_unit);
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			return jdbcTemplate.update(INSERT_QUERY, pb.getOrderId(), pb.getConsignNumber(), pb.getProductName(), pb.receiver,
+					pb.getReceiverAddr(), pb.getSender(), pb.getSenderAddr(), pb.customerId, pb.memo, df.parse(pb.getReceiveDate()),
+					pb.l_length, pb.w_length, pb.h_length, pb.weight_g, pb.cmb_unit);
+		} catch (DataAccessException | ParseException e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 }

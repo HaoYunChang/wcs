@@ -1,5 +1,7 @@
 package com.wcs.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +25,7 @@ import com.wcs.autoEx.PackageBox;
 import com.wcs.autoEx.service.agv.ShuttleDeviceService;
 import com.wcs.autoEx.service.caps.CapsService;
 import com.wcs.autoEx.service.tally.TallyService;
+import com.wcs.dao.ActionLogService;
 import com.wcs.dao.DbService;
 import com.wcs.frame.WcsApplicationFrame;
 import com.wcs.mq.MqSender;
@@ -46,12 +49,16 @@ public class ApiDeviceController {
 	private TallyService tallyService;
 	
 	@Autowired
+	private ActionLogService actionLogService;
+	
+	@Autowired
 	WcsApplicationFrame wcsAppFrame;
 	
 	@GetMapping("/shuttle/{s}/{d}")
 	public Map<String, String> shuttleTrigger(@PathVariable String s, @PathVariable String d)
 			throws Exception {
 		IGoCommand goCmd = new GoCommand(s, d, "GO");
+		System.out.println("shuttleServiceAPI:"+shuttleDeviceService);
 		Map<String, String> result = shuttleDeviceService.onGoCmd(goCmd);
 		result.put("url", "http://192.168.100.102:9102/wcs_api/autoDevice/shuttle/"+s+"/"+d);
 		return result;
@@ -214,6 +221,15 @@ public class ApiDeviceController {
     public String receivePackage(PackageBox packageBox) {
     	if (packageBox.consignNumber.isBlank() || packageBox.orderId.isBlank())
     		return "包裹無訂單邊號/託運單號";
+    	if (!packageBox.receiveDate.isEmpty()) {
+    		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+    		try {
+    			df.parse(packageBox.receiveDate);
+    		}catch(Exception e) {
+    			return "包裹日期格式不對，為yyyy-MM-dd";
+    		}
+    	} else
+    		return "包裹收件日期為空";
     	packageBox.setPackageStatus("理貨完成");
     	tallyService.setPackageBox(packageBox);
     	wcsAppFrame.addPackage(packageBox);
@@ -242,5 +258,39 @@ public class ApiDeviceController {
     	tallyService.queue2.clear();
     	tallyService.queue3.clear();
     	return "queue is clear";
+    }
+    
+    @GetMapping("/actionLog/clear")
+    public Map<String, String> actionLogClean() {
+    	int a = actionLogService.delete();
+    	Map<String, String> result = new HashMap<String, String>();
+    	if (a == 0)
+    		result.put("status", "OK");
+    	else 
+    		result.put("status", "fail");
+    	return result;
+    }
+    
+    @GetMapping("/allDevice/reset")
+    public Map<String, Object> clearAllDevice(){
+	    Map<String, Object> result = new HashMap<String, Object>();
+	    Map<String, String> tallyResult = new HashMap<String, String>();
+	    
+	    try {
+	    	tallyService.reset();
+	    	tallyResult.put("status", "OK");
+	    	tallyResult.put("message", "allReset");
+	    }catch (Exception e) {
+	    	tallyResult.put("status", "fail");
+	    	tallyResult.put("message", e.getLocalizedMessage());
+	    }
+	    result.put("tallyReset", tallyResult);
+	    
+	    try {
+	    	shuttleDeviceService.reset();
+	    }catch(Exception e) {
+	    	
+	    }
+    	return result;
     }
 }

@@ -67,6 +67,18 @@ public class TallyService implements Runnable {
 		tallyOperation();
 	}
 	
+	public void reset() {
+		queue1.clear();
+		queue2.clear();
+		queue3.clear();
+		irStatus = false;
+		armStatus = false;
+		transferStatus = false;
+		cv4PackPoll = false;
+		packageBox = null;
+		cabCount = 0;
+	}
+	
 	public void setPackageBox(PackageBox pb) {
 		queue1.add(pb);
 	}
@@ -293,7 +305,6 @@ public class TallyService implements Runnable {
             transferStatus = true;
             cabCount++;
             queue3.add(queue2.poll());
-//            packageBox = queue3.element();
             wcsAppFrame.setLabel();
         }catch(Exception e) {
         	System.out.println(e.getLocalizedMessage());
@@ -319,82 +330,89 @@ public class TallyService implements Runnable {
 			} catch (InterruptedException e1) {
 				e1.printStackTrace();
 			}
-		    
-			if (queue1.size()>0)
-				System.out.println("Queue1:"+queue1.element().toString());
-			
-			if (queue2.size()>0)
-				System.out.println("Queue2:"+queue2.element().toString());
-			
-			if (queue3.size()>0)
-				System.out.println("Queue3:"+queue3.element().toString());
-		 
-			if (queue2.size() > 0) {
-				if (queue2.element() != null) {
-					if (test){
-						transferStatus = true;
-			            cabCount++;
-			            queue3.add(queue2.poll());
-			            wcsAppFrame.setLabel();
-					} else{
-					File file = new File("D:\\PDF\\source\\標籤設計(底).pdf");
-					try {
-						addBarcodeAndText(file, queue2.element().orderId, queue2.element().consignNumber);
-						soapTransmit(fileToBase64("D:\\PDF\\testAddText.pdf"));
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-					}
-				}
-			}
-
-			if (queue3.size() > 0 ) {
-				//測試用
-				if (test) {
-					if(queue3.element() != null && armStatus) {
-						irStatus = true;
+		    try {
+				if (queue1.size()>0)
+					System.out.println("Queue1:"+queue1.element().toString());
+				
+				if (queue2.size()>0)
+					System.out.println("Queue2:"+queue2.element().toString());
+				
+				if (queue3.size()>0)
+					System.out.println("Queue3:"+queue3.element().toString());
+			 
+				if (queue2.size() > 0) {
+					if (queue2.element() != null) {
+						if (test){
+							transferStatus = true;
+				            cabCount++;
+				            queue3.add(queue2.poll());
+				            wcsAppFrame.setLabel();
+						} else{
+						File file = new File("D:\\PDF\\source\\標籤設計(底).pdf");
+						try {
+							addBarcodeAndText(file, queue2.element().orderId, queue2.element().consignNumber);
+							soapTransmit(fileToBase64("D:\\PDF\\testAddText.pdf"));
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						}
 					}
 				}
-				if (queue3.element() != null && armStatus && !irStatus) {
-					sendMqtt("plc/relay/30f0731bb6c043e79f3b4200f61529e1", "2"); 
-					transferStatus = false;
-				}
-			}
-			
-			if (irStatus && armStatus && !cv4PackPoll) {
-				sendMqtt("plc/relay/30f0731bb6c043e79f3b4200f61529e1", "1");
-				if (!test) {
-					if (doJudge(queue3.element())) {
-						JSONObject json = new JSONObject();
-						json.put("length", queue3.element().l_length);
-						json.put("width", queue3.element().w_length);
-						json.put("height", queue3.element().h_length);
-						json.put("weight", queue3.element().weight_g);
-						wcsAppFrame.setArm();
-						armDeviceService.armCmdDo(json);
-						WcsApplicationFrame.tallyArmStatus = false;
-						packageBox = queue3.poll();
-						armStatus = false;	
+	
+				if (queue3.size() > 0 ) {
+					if (queue3.element() != null && armStatus && !irStatus) {
+						sendMqtt("plc/relay/30f0731bb6c043e79f3b4200f61529e1", "2"); 
+						transferStatus = false;
 					}
-				} else {
-					JSONObject json = new JSONObject();
-					json.put("length", queue3.element().l_length);
-					json.put("width", queue3.element().w_length);
-					json.put("height", queue3.element().h_length);
-					json.put("weight", queue3.element().weight_g);
-					wcsAppFrame.setArm();
-					armDeviceService.armCmdDo(json);
-					WcsApplicationFrame.tallyArmStatus = false;
-					packageBox = queue3.poll();
-					irStatus = false;
-					armStatus = false;	
+					//測試用
+					if (test) {
+						if(queue3.element() != null && armStatus) {
+							irStatus = true;
+						}
+					}
 				}
-			}
-			if (!irStatus && cv4PackPoll) {
-				queue3.poll();
-				wcsAppFrame.setError("label", "", "fix");
-				cv4PackPoll = false;
-			}
+				
+				if (irStatus && armStatus && !cv4PackPoll) {
+					sendMqtt("plc/relay/30f0731bb6c043e79f3b4200f61529e1", "1");
+					if (!test) {
+						if (doJudge(queue3.element())) {
+							JSONObject json = new JSONObject();
+							json.put("length", queue3.element().l_length);
+							json.put("width", queue3.element().w_length);
+							json.put("height", queue3.element().h_length);
+							json.put("weight", queue3.element().weight_g);
+							wcsAppFrame.setArm();
+							armDeviceService.armCmdDo(json);
+							WcsApplicationFrame.tallyArmStatus = false;
+							packageBox = queue3.poll();
+							armStatus = false;	
+						}
+					} else {
+						if (doJudge(queue3.element())) {
+							JSONObject json = new JSONObject();
+							json.put("length", queue3.element().l_length);
+							json.put("width", queue3.element().w_length);
+							json.put("height", queue3.element().h_length);
+							json.put("weight", queue3.element().weight_g);
+							wcsAppFrame.setArm();
+							armDeviceService.armCmdDo(json);
+							WcsApplicationFrame.tallyArmStatus = false;
+							packageBox = queue3.poll();
+							irStatus = false;
+							armStatus = false;	
+						} else {
+							irStatus = false;
+						}
+					}
+				}
+				if (!irStatus && cv4PackPoll) {
+					queue3.poll();
+					wcsAppFrame.setError("label", "", "fix");
+					cv4PackPoll = false;
+				}
+		    }catch(Exception e) {
+		    	System.out.println("tallyError:"+e.getLocalizedMessage());
+		    }
 		}
 	}
 	
@@ -510,11 +528,18 @@ public class TallyService implements Runnable {
 				System.out.println("找不到箱子類別");
 				wcsAppFrame.setError("label", ErrorMessage.LABEL_NO_TYPE.value(), "set");
 				cv4PackPoll = true;
+				break;
 			}
 		}
 
 		if (cv4PackPoll) {
-			wcsAppFrame.setPackageError();
+			JSONObject json = new JSONObject();
+			json.put("orderId", pb.orderId);
+			json.put("consign_number", pb.consignNumber);
+			json.put("status", "fail");
+			json.put("message", "包裹異常");
+			mqSender.sendTopic("ArmFinish", json.toString());
+			wcsAppFrame.setPackageError("label");
 			return false;
 		} else
 			return true;
